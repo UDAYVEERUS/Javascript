@@ -45,6 +45,6 @@
 
 // For loop * pattern
 
-for(let i = 5; i >= 1 ; i--) {
+for(let i = 1; i <= 5; i++) {
     console.log(" * ".repeat(i) )
 }
