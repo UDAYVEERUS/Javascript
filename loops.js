@@ -27,3 +27,14 @@ while(i <= n){
     i++;
 }
 console.log("sum of the numbers = " , sum1)
+
+
+// for of loop check size of string
+
+var str = "udayveersingh"
+let size = 0;
+for(let i of str){
+    console.log("i = " , i)
+    size++;
+}
+console.log("size is = ", size)
