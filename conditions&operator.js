@@ -25,7 +25,7 @@
 // let res2 = (age > 20 || age < 13);
 // console.log(res2); // false
 
-let score = 80;
+let score = 67;
 
 if(score >= 90 && score <= 100){
     grade = "A"
@@ -35,7 +35,10 @@ if(score >= 90 && score <= 100){
     grade = "C"
 } else if(score >= 60 && score <= 69){
     grade = "D"
-}else if(score >=50 ** score <= 59){
+}else if(score >=50 && score <= 59){
+    grade = "E"
+}
+else{
     grade = "F"
 }
 console.log(grade);
