@@ -19,3 +19,10 @@ if(age > 18){
 }else{
     console.log("You can not vote.")
 }
+
+let res = (age > 14 && age < 19);
+console.log(res); // true
+let res2 = (age > 20 || age < 13);
+console.log(res2); // false
+
+
