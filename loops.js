@@ -8,7 +8,7 @@ for(let i=1; i <= 100; i++){
 var sum = 0;
 for(let i=1; i <= 5; i++){
     console.log("i = ", i)
-    sum = sum + i
+    sum = sum + i;
 }
 console.log("Sum of the 1 to n numbers = ", sum)
 
@@ -37,4 +37,4 @@ for(let i of str){
     console.log("i = " , i)
     size++;
 }
-console.log("size is = ", size)
+console.log("size is = ", size);
