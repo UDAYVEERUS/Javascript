@@ -1,4 +1,4 @@
-// After applying the 10% offer what will be the array
+// // After applying the 10% offer what will be the array
 let items = [200, 450, 239,443,764,786]
 
 for(let i=0; i<items.length; i++){
@@ -57,11 +57,38 @@ let number = [23,44,32,56,77,65,78,90];
 // number.splice(2, 2 ,101,102);
 
 //Add element
-// number.splice(3,0,55);
+number.splice(3,0,55); // it will add on index no.5
 
 // Delete Element
-// number.splice(3,1) // it will delete index no. 3
+number.splice(3,1) // it will delete index no. 3
 
 // Replace Element
-number.splice(4,1,102)
+number.splice(4,1,102) // it will delete index no.4 and replace with 102.
 console.log(number);
+
+
+// Q1 - Create an array to store compnies -> "Bloomberg" , "microsoft" , "Uber" , "IBM", "Netflix"
+// (a) -> Remove the first company from the array
+// (b) -> Remove Uber & Add Ola in its AnimationPlaybackEvent
+// (C) -> Add Amazon at the end
+
+let compnies = ["Bloomberg" , "Microsoft" , "Uber" , "IBM" , "Netflix"];
+compnies.shift(); // it will remove 1st company;
+compnies.splice(1, 1 , "OLA"); // it will replace index no. 1 Uber to OLA;
+compnies.push("Amazon"); // It will push the AMazon at the end of Array;
+console.log(compnies); // Microsoft , OLA , IBM , Netflix , Amazon;
+
+
+// Reverse Array
+
+let arr1 = [6, 2 , 9 , 1 , 5 , 6]
+arr1.sort((a , b ) => {
+    return b - a;
+})
+console.log(arr1)
+// let reverseArray = []
+// // arr1.reverse()
+// for (let i=arr1.length-1 ; i>=0 ; i--){
+//     reverseArray.push(arr1[i])
+// }
+// console.log("reversed array : ",reverseArray)
