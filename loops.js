@@ -51,11 +51,25 @@
 
 // Print all the even numbers from 0 to 100
 
-let sum = 0;
-for(let i = 0; i <= 100; i++){
-    if(i % 2 == 0){ // even number
-        sum = sum + i;
-        console.log(" Even number = " , i)
+// let sum = 0;
+// for(let i = 0; i <= 100; i++){
+//     if(i % 2 == 0){ // even number
+//         sum = sum + i;
+//         console.log(" Even number = " , i)
+//     }
+// }
+// console.log("Sum of even numbers = ", sum)
+
+
+// otp generator
+
+let otp_generator = (digit) => {
+    let num = '0123456789';
+    let otp = '';
+
+    for(let i=0; i<digit; i++){
+        otp = otp + num[Math.floor(Math.random() * 10)]
     }
+    return "OTP is "+ otp;
 }
-console.log("Sum of even numbers = ", sum)
+console.log(otp_generator(6));
