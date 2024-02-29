@@ -1,0 +1,3368 @@
+<html lang="en-US">
+  <head>
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=GT-P844D67&amp;l=dataLayer&amp;cx=c"
+    ></script>
+    <script
+      src="https://connect.facebook.net/signals/config/314879978141209?v=2.9.147&amp;r=stable&amp;domain=learnskillstoday.com&amp;hme=20c913bdcd4be51a752120153aa5caaecb3ee86c7f26cf737846e40b202aba68&amp;ex_m=62%2C106%2C94%2C98%2C53%2C3%2C88%2C61%2C14%2C86%2C79%2C44%2C46%2C150%2C153%2C164%2C160%2C161%2C163%2C25%2C89%2C45%2C68%2C162%2C145%2C148%2C157%2C158%2C165%2C115%2C13%2C43%2C169%2C168%2C117%2C16%2C29%2C32%2C1%2C36%2C57%2C58%2C59%2C63%2C83%2C15%2C12%2C85%2C82%2C81%2C95%2C97%2C31%2C96%2C26%2C22%2C146%2C149%2C124%2C24%2C9%2C10%2C11%2C5%2C6%2C21%2C19%2C20%2C49%2C54%2C56%2C66%2C90%2C23%2C67%2C8%2C7%2C71%2C41%2C18%2C92%2C91%2C17%2C4%2C73%2C80%2C72%2C78%2C40%2C39%2C77%2C33%2C35%2C76%2C48%2C74%2C28%2C37%2C65%2C0%2C84%2C75%2C2%2C30%2C55%2C34%2C93%2C38%2C70%2C60%2C99%2C52%2C51%2C27%2C87%2C50%2C47%2C42%2C69%2C64%2C100"
+      async=""
+    ></script>
+    <script
+      async=""
+      src="https://connect.facebook.net/en_US/fbevents.js"
+    ></script>
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtm.js?id=GTM-T8RRHW9G"
+    ></script>
+    <script type="text/javascript" id="mobile-simulator">
+      window.hasMobileFirstExtension = true;
+    </script>
+    <meta charset="UTF-8" />
+    <script>
+      if (
+        navigator.userAgent.match(/MSIE|Internet Explorer/i) ||
+        navigator.userAgent.match(/Trident\/7\..*?rv:11/i)
+      ) {
+        var href = document.location.href;
+        if (!href.match(/[?&]nowprocket/)) {
+          if (href.indexOf("?") == -1) {
+            if (href.indexOf("#") == -1) {
+              document.location.href = href + "?nowprocket=1";
+            } else {
+              document.location.href = href.replace("#", "?nowprocket=1#");
+            }
+          } else {
+            if (href.indexOf("#") == -1) {
+              document.location.href = href + "&nowprocket=1";
+            } else {
+              document.location.href = href.replace("#", "&nowprocket=1#");
+            }
+          }
+        }
+      }
+    </script>
+    <script>
+      class RocketLazyLoadScripts {
+        constructor() {
+          (this.v = "1.2.3"),
+            (this.triggerEvents = [
+              "keydown",
+              "mousedown",
+              "mousemove",
+              "touchmove",
+              "touchstart",
+              "touchend",
+              "wheel",
+            ]),
+            (this.userEventHandler = this._triggerListener.bind(this)),
+            (this.touchStartHandler = this._onTouchStart.bind(this)),
+            (this.touchMoveHandler = this._onTouchMove.bind(this)),
+            (this.touchEndHandler = this._onTouchEnd.bind(this)),
+            (this.clickHandler = this._onClick.bind(this)),
+            (this.interceptedClicks = []),
+            window.addEventListener("pageshow", (t) => {
+              this.persisted = t.persisted;
+            }),
+            window.addEventListener("DOMContentLoaded", () => {
+              this._preconnect3rdParties();
+            }),
+            (this.delayedScripts = { normal: [], async: [], defer: [] }),
+            (this.trash = []),
+            (this.allJQueries = []);
+        }
+        _addUserInteractionListener(t) {
+          if (document.hidden) {
+            t._triggerListener();
+            return;
+          }
+          this.triggerEvents.forEach((e) =>
+            window.addEventListener(e, t.userEventHandler, { passive: !0 })
+          ),
+            window.addEventListener("touchstart", t.touchStartHandler, {
+              passive: !0,
+            }),
+            window.addEventListener("mousedown", t.touchStartHandler),
+            document.addEventListener("visibilitychange", t.userEventHandler);
+        }
+        _removeUserInteractionListener() {
+          this.triggerEvents.forEach((t) =>
+            window.removeEventListener(t, this.userEventHandler, {
+              passive: !0,
+            })
+          ),
+            document.removeEventListener(
+              "visibilitychange",
+              this.userEventHandler
+            );
+        }
+        _onTouchStart(t) {
+          "HTML" !== t.target.tagName &&
+            (window.addEventListener("touchend", this.touchEndHandler),
+            window.addEventListener("mouseup", this.touchEndHandler),
+            window.addEventListener("touchmove", this.touchMoveHandler, {
+              passive: !0,
+            }),
+            window.addEventListener("mousemove", this.touchMoveHandler),
+            t.target.addEventListener("click", this.clickHandler),
+            this._renameDOMAttribute(t.target, "onclick", "rocket-onclick"),
+            this._pendingClickStarted());
+        }
+        _onTouchMove(t) {
+          window.removeEventListener("touchend", this.touchEndHandler),
+            window.removeEventListener("mouseup", this.touchEndHandler),
+            window.removeEventListener("touchmove", this.touchMoveHandler, {
+              passive: !0,
+            }),
+            window.removeEventListener("mousemove", this.touchMoveHandler),
+            t.target.removeEventListener("click", this.clickHandler),
+            this._renameDOMAttribute(t.target, "rocket-onclick", "onclick"),
+            this._pendingClickFinished();
+        }
+        _onTouchEnd(t) {
+          window.removeEventListener("touchend", this.touchEndHandler),
+            window.removeEventListener("mouseup", this.touchEndHandler),
+            window.removeEventListener("touchmove", this.touchMoveHandler, {
+              passive: !0,
+            }),
+            window.removeEventListener("mousemove", this.touchMoveHandler);
+        }
+        _onClick(t) {
+          t.target.removeEventListener("click", this.clickHandler),
+            this._renameDOMAttribute(t.target, "rocket-onclick", "onclick"),
+            this.interceptedClicks.push(t),
+            t.preventDefault(),
+            t.stopPropagation(),
+            t.stopImmediatePropagation(),
+            this._pendingClickFinished();
+        }
+        _replayClicks() {
+          window.removeEventListener("touchstart", this.touchStartHandler, {
+            passive: !0,
+          }),
+            window.removeEventListener("mousedown", this.touchStartHandler),
+            this.interceptedClicks.forEach((t) => {
+              t.target.dispatchEvent(
+                new MouseEvent("click", {
+                  view: t.view,
+                  bubbles: !0,
+                  cancelable: !0,
+                })
+              );
+            });
+        }
+        _waitForPendingClicks() {
+          return new Promise((t) => {
+            this._isClickPending ? (this._pendingClickFinished = t) : t();
+          });
+        }
+        _pendingClickStarted() {
+          this._isClickPending = !0;
+        }
+        _pendingClickFinished() {
+          this._isClickPending = !1;
+        }
+        _renameDOMAttribute(t, e, r) {
+          t.hasAttribute &&
+            t.hasAttribute(e) &&
+            (event.target.setAttribute(r, event.target.getAttribute(e)),
+            event.target.removeAttribute(e));
+        }
+        _triggerListener() {
+          this._removeUserInteractionListener(this),
+            "loading" === document.readyState
+              ? document.addEventListener(
+                  "DOMContentLoaded",
+                  this._loadEverythingNow.bind(this)
+                )
+              : this._loadEverythingNow();
+        }
+        _preconnect3rdParties() {
+          let t = [];
+          document
+            .querySelectorAll("script[type=rocketlazyloadscript]")
+            .forEach((e) => {
+              if (e.hasAttribute("src")) {
+                let r = new URL(e.src).origin;
+                r !== location.origin &&
+                  t.push({
+                    src: r,
+                    crossOrigin:
+                      e.crossOrigin ||
+                      "module" === e.getAttribute("data-rocket-type"),
+                  });
+              }
+            }),
+            (t = [...new Map(t.map((t) => [JSON.stringify(t), t])).values()]),
+            this._batchInjectResourceHints(t, "preconnect");
+        }
+        async _loadEverythingNow() {
+          (this.lastBreath = Date.now()),
+            this._delayEventListeners(this),
+            this._delayJQueryReady(this),
+            this._handleDocumentWrite(),
+            this._registerAllDelayedScripts(),
+            this._preloadAllScripts(),
+            await this._loadScriptsFromList(this.delayedScripts.normal),
+            await this._loadScriptsFromList(this.delayedScripts.defer),
+            await this._loadScriptsFromList(this.delayedScripts.async);
+          try {
+            await this._triggerDOMContentLoaded(),
+              await this._triggerWindowLoad();
+          } catch (t) {
+            console.error(t);
+          }
+          window.dispatchEvent(new Event("rocket-allScriptsLoaded")),
+            this._waitForPendingClicks().then(() => {
+              this._replayClicks();
+            }),
+            this._emptyTrash();
+        }
+        _registerAllDelayedScripts() {
+          document
+            .querySelectorAll("script[type=rocketlazyloadscript]")
+            .forEach((t) => {
+              t.hasAttribute("data-rocket-src")
+                ? t.hasAttribute("async") && !1 !== t.async
+                  ? this.delayedScripts.async.push(t)
+                  : (t.hasAttribute("defer") && !1 !== t.defer) ||
+                    "module" === t.getAttribute("data-rocket-type")
+                  ? this.delayedScripts.defer.push(t)
+                  : this.delayedScripts.normal.push(t)
+                : this.delayedScripts.normal.push(t);
+            });
+        }
+        async _transformScript(t) {
+          return new Promise(
+            (await this._littleBreath(),
+            navigator.userAgent.indexOf("Firefox/") > 0 ||
+              "" === navigator.vendor)
+              ? (e) => {
+                  let r = document.createElement("script");
+                  [...t.attributes].forEach((t) => {
+                    let e = t.nodeName;
+                    "type" !== e &&
+                      ("data-rocket-type" === e && (e = "type"),
+                      "data-rocket-src" === e && (e = "src"),
+                      r.setAttribute(e, t.nodeValue));
+                  }),
+                    t.text && (r.text = t.text),
+                    r.hasAttribute("src")
+                      ? (r.addEventListener("load", e),
+                        r.addEventListener("error", e))
+                      : ((r.text = t.text), e());
+                  try {
+                    t.parentNode.replaceChild(r, t);
+                  } catch (i) {
+                    e();
+                  }
+                }
+              : async (e) => {
+                  function r() {
+                    t.setAttribute("data-rocket-status", "failed"), e();
+                  }
+                  try {
+                    let i = t.getAttribute("data-rocket-type"),
+                      n = t.getAttribute("data-rocket-src");
+                    t.text,
+                      i
+                        ? ((t.type = i), t.removeAttribute("data-rocket-type"))
+                        : t.removeAttribute("type"),
+                      t.addEventListener("load", function r() {
+                        t.setAttribute("data-rocket-status", "executed"), e();
+                      }),
+                      t.addEventListener("error", r),
+                      n
+                        ? (t.removeAttribute("data-rocket-src"), (t.src = n))
+                        : (t.src =
+                            "data:text/javascript;base64," +
+                            window.btoa(unescape(encodeURIComponent(t.text))));
+                  } catch (s) {
+                    r();
+                  }
+                }
+          );
+        }
+        async _loadScriptsFromList(t) {
+          let e = t.shift();
+          return e && e.isConnected
+            ? (await this._transformScript(e), this._loadScriptsFromList(t))
+            : Promise.resolve();
+        }
+        _preloadAllScripts() {
+          this._batchInjectResourceHints(
+            [
+              ...this.delayedScripts.normal,
+              ...this.delayedScripts.defer,
+              ...this.delayedScripts.async,
+            ],
+            "preload"
+          );
+        }
+        _batchInjectResourceHints(t, e) {
+          var r = document.createDocumentFragment();
+          t.forEach((t) => {
+            let i =
+              (t.getAttribute && t.getAttribute("data-rocket-src")) || t.src;
+            if (i) {
+              let n = document.createElement("link");
+              (n.href = i),
+                (n.rel = e),
+                "preconnect" !== e && (n.as = "script"),
+                t.getAttribute &&
+                  "module" === t.getAttribute("data-rocket-type") &&
+                  (n.crossOrigin = !0),
+                t.crossOrigin && (n.crossOrigin = t.crossOrigin),
+                t.integrity && (n.integrity = t.integrity),
+                r.appendChild(n),
+                this.trash.push(n);
+            }
+          }),
+            document.head.appendChild(r);
+        }
+        _delayEventListeners(t) {
+          let e = {};
+          function r(t, r) {
+            !(function t(r) {
+              !e[r] &&
+                ((e[r] = {
+                  originalFunctions: {
+                    add: r.addEventListener,
+                    remove: r.removeEventListener,
+                  },
+                  eventsToRewrite: [],
+                }),
+                (r.addEventListener = function () {
+                  (arguments[0] = i(arguments[0])),
+                    e[r].originalFunctions.add.apply(r, arguments);
+                }),
+                (r.removeEventListener = function () {
+                  (arguments[0] = i(arguments[0])),
+                    e[r].originalFunctions.remove.apply(r, arguments);
+                }));
+              function i(t) {
+                return e[r].eventsToRewrite.indexOf(t) >= 0 ? "rocket-" + t : t;
+              }
+            })(t),
+              e[t].eventsToRewrite.push(r);
+          }
+          function i(t, e) {
+            let r = t[e];
+            Object.defineProperty(t, e, {
+              get: () => r || function () {},
+              set(i) {
+                t["rocket" + e] = r = i;
+              },
+            });
+          }
+          r(document, "DOMContentLoaded"),
+            r(window, "DOMContentLoaded"),
+            r(window, "load"),
+            r(window, "pageshow"),
+            r(document, "readystatechange"),
+            i(document, "onreadystatechange"),
+            i(window, "onload"),
+            i(window, "onpageshow");
+        }
+        _delayJQueryReady(t) {
+          let e;
+          function r(r) {
+            if (r && r.fn && !t.allJQueries.includes(r)) {
+              r.fn.ready = r.fn.init.prototype.ready = function (e) {
+                return (
+                  t.domReadyFired
+                    ? e.bind(document)(r)
+                    : document.addEventListener("rocket-DOMContentLoaded", () =>
+                        e.bind(document)(r)
+                      ),
+                  r([])
+                );
+              };
+              let i = r.fn.on;
+              (r.fn.on = r.fn.init.prototype.on =
+                function () {
+                  if (this[0] === window) {
+                    function t(t) {
+                      return t
+                        .split(" ")
+                        .map((t) =>
+                          "load" === t || 0 === t.indexOf("load.")
+                            ? "rocket-jquery-load"
+                            : t
+                        )
+                        .join(" ");
+                    }
+                    "string" == typeof arguments[0] ||
+                    arguments[0] instanceof String
+                      ? (arguments[0] = t(arguments[0]))
+                      : "object" == typeof arguments[0] &&
+                        Object.keys(arguments[0]).forEach((e) => {
+                          let r = arguments[0][e];
+                          delete arguments[0][e], (arguments[0][t(e)] = r);
+                        });
+                  }
+                  return i.apply(this, arguments), this;
+                }),
+                t.allJQueries.push(r);
+            }
+            e = r;
+          }
+          r(window.jQuery),
+            Object.defineProperty(window, "jQuery", {
+              get: () => e,
+              set(t) {
+                r(t);
+              },
+            });
+        }
+        async _triggerDOMContentLoaded() {
+          (this.domReadyFired = !0),
+            await this._littleBreath(),
+            document.dispatchEvent(new Event("rocket-DOMContentLoaded")),
+            await this._littleBreath(),
+            window.dispatchEvent(new Event("rocket-DOMContentLoaded")),
+            await this._littleBreath(),
+            document.dispatchEvent(new Event("rocket-readystatechange")),
+            await this._littleBreath(),
+            document.rocketonreadystatechange &&
+              document.rocketonreadystatechange();
+        }
+        async _triggerWindowLoad() {
+          await this._littleBreath(),
+            window.dispatchEvent(new Event("rocket-load")),
+            await this._littleBreath(),
+            window.rocketonload && window.rocketonload(),
+            await this._littleBreath(),
+            this.allJQueries.forEach((t) =>
+              t(window).trigger("rocket-jquery-load")
+            ),
+            await this._littleBreath();
+          let t = new Event("rocket-pageshow");
+          (t.persisted = this.persisted),
+            window.dispatchEvent(t),
+            await this._littleBreath(),
+            window.rocketonpageshow &&
+              window.rocketonpageshow({ persisted: this.persisted });
+        }
+        _handleDocumentWrite() {
+          let t = new Map();
+          document.write = document.writeln = function (e) {
+            let r = document.currentScript;
+            r || console.error("WPRocket unable to document.write this: " + e);
+            let i = document.createRange(),
+              n = r.parentElement,
+              s = t.get(r);
+            void 0 === s && ((s = r.nextSibling), t.set(r, s));
+            let a = document.createDocumentFragment();
+            i.setStart(a, 0),
+              a.appendChild(i.createContextualFragment(e)),
+              n.insertBefore(a, s);
+          };
+        }
+        async _littleBreath() {
+          Date.now() - this.lastBreath > 45 &&
+            (await this._requestAnimFrame(), (this.lastBreath = Date.now()));
+        }
+        async _requestAnimFrame() {
+          return document.hidden
+            ? new Promise((t) => setTimeout(t))
+            : new Promise((t) => requestAnimationFrame(t));
+        }
+        _emptyTrash() {
+          this.trash.forEach((t) => t.remove());
+        }
+        static run() {
+          let t = new RocketLazyLoadScripts();
+          t._addUserInteractionListener(t);
+        }
+      }
+      RocketLazyLoadScripts.run();
+    </script>
+
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <!-- This site is optimized with the Yoast SEO plugin v21.5 - https://yoast.com/wordpress/plugins/seo/ -->
+    <title>Cartoon Hindi Stories Bundle Pack - Learn Skills Today</title>
+    <link
+      rel="stylesheet"
+      href="https://learnskillstoday.com/wp-content/cache/min/1/1b781b6b880cc4e9b6f213a471ed0945.css"
+      media="all"
+      data-minify="1"
+    />
+    <link
+      rel="canonical"
+      href="https://learnskillstoday.com/cartoon-hindi-stories-bundle-pack/"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Join Now (LAST DAY)" />
+    <meta
+      property="og:description"
+      content="2,000+ Hindi Cartoon Stories Video Bundle"
+    />
+    <meta
+      property="og:url"
+      content="https://learnskillstoday.com/cartoon-hindi-stories-bundle-pack/"
+    />
+    <meta property="og:site_name" content="Learn Skills Today" />
+    <meta
+      property="article:modified_time"
+      content="2024-01-15T19:07:36+00:00"
+    />
+    <meta
+      property="og:image"
+      content="https://learnskillstoday.com/wp-content/uploads/2023/11/POSTERSS.png"
+    />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:label1" content="Est. reading time" />
+    <meta name="twitter:data1" content="4 minutes" />
+    <script type="application/ld+json" class="yoast-schema-graph">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://learnskillstoday.com/cartoon-hindi-stories-bundle-pack/",
+            "url": "https://learnskillstoday.com/cartoon-hindi-stories-bundle-pack/",
+            "name": "Cartoon Hindi Stories Bundle Pack - Learn Skills Today",
+            "isPartOf": { "@id": "https://learnskillstoday.com/#website" },
+            "primaryImageOfPage": {
+              "@id": "https://learnskillstoday.com/cartoon-hindi-stories-bundle-pack/#primaryimage"
+            },
+            "image": {
+              "@id": "https://learnskillstoday.com/cartoon-hindi-stories-bundle-pack/#primaryimage"
+            },
+            "thumbnailUrl": "https://www.facebook.com/tr?id=314879978141209&ev=PageView&noscript=1",
+            "datePublished": "2023-11-17T19:52:32+00:00",
+            "dateModified": "2024-01-15T19:07:36+00:00",
+            "breadcrumb": {
+              "@id": "https://learnskillstoday.com/cartoon-hindi-stories-bundle-pack/#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "potentialAction": [
+              {
+                "@type": "ReadAction",
+                "target": [
+                  "https://learnskillstoday.com/cartoon-hindi-stories-bundle-pack/"
+                ]
+              }
+            ]
+          },
+          {
+            "@type": "ImageObject",
+            "inLanguage": "en-US",
+            "@id": "https://learnskillstoday.com/cartoon-hindi-stories-bundle-pack/#primaryimage",
+            "url": "https://www.facebook.com/tr?id=314879978141209&ev=PageView&noscript=1",
+            "contentUrl": "https://www.facebook.com/tr?id=314879978141209&ev=PageView&noscript=1"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://learnskillstoday.com/cartoon-hindi-stories-bundle-pack/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://learnskillstoday.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Cartoon Hindi Stories Bundle Pack"
+              }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://learnskillstoday.com/#website",
+            "url": "https://learnskillstoday.com/",
+            "name": "Learn Skills Today",
+            "description": "Master Skills Today For Tomorrow",
+            "potentialAction": [
+              {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://learnskillstoday.com/?s={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+              }
+            ],
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    </script>
+    <!-- / Yoast SEO plugin. -->
+
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Learn Skills Today » Feed"
+      href="https://learnskillstoday.com/feed/"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Learn Skills Today » Comments Feed"
+      href="https://learnskillstoday.com/comments/feed/"
+    />
+    <script
+      src="data:text/javascript;base64,CndpbmRvdy5fd3BlbW9qaVNldHRpbmdzID0geyJiYXNlVXJsIjoiaHR0cHM6XC9cL3Mudy5vcmdcL2ltYWdlc1wvY29yZVwvZW1vamlcLzE0LjAuMFwvNzJ4NzJcLyIsImV4dCI6Ii5wbmciLCJzdmdVcmwiOiJodHRwczpcL1wvcy53Lm9yZ1wvaW1hZ2VzXC9jb3JlXC9lbW9qaVwvMTQuMC4wXC9zdmdcLyIsInN2Z0V4dCI6Ii5zdmciLCJzb3VyY2UiOnsiY29uY2F0ZW1vamkiOiJodHRwczpcL1wvbGVhcm5za2lsbHN0b2RheS5jb21cL3dwLWluY2x1ZGVzXC9qc1wvd3AtZW1vamktcmVsZWFzZS5taW4uanM/dmVyPTYuNC4zIn19OwovKiEgVGhpcyBmaWxlIGlzIGF1dG8tZ2VuZXJhdGVkICovCiFmdW5jdGlvbihpLG4pe3ZhciBvLHMsZTtmdW5jdGlvbiBjKGUpe3RyeXt2YXIgdD17c3VwcG9ydFRlc3RzOmUsdGltZXN0YW1wOihuZXcgRGF0ZSkudmFsdWVPZigpfTtzZXNzaW9uU3RvcmFnZS5zZXRJdGVtKG8sSlNPTi5zdHJpbmdpZnkodCkpfWNhdGNoKGUpe319ZnVuY3Rpb24gcChlLHQsbil7ZS5jbGVhclJlY3QoMCwwLGUuY2FudmFzLndpZHRoLGUuY2FudmFzLmhlaWdodCksZS5maWxsVGV4dCh0LDAsMCk7dmFyIHQ9bmV3IFVpbnQzMkFycmF5KGUuZ2V0SW1hZ2VEYXRhKDAsMCxlLmNhbnZhcy53aWR0aCxlLmNhbnZhcy5oZWlnaHQpLmRhdGEpLHI9KGUuY2xlYXJSZWN0KDAsMCxlLmNhbnZhcy53aWR0aCxlLmNhbnZhcy5oZWlnaHQpLGUuZmlsbFRleHQobiwwLDApLG5ldyBVaW50MzJBcnJheShlLmdldEltYWdlRGF0YSgwLDAsZS5jYW52YXMud2lkdGgsZS5jYW52YXMuaGVpZ2h0KS5kYXRhKSk7cmV0dXJuIHQuZXZlcnkoZnVuY3Rpb24oZSx0KXtyZXR1cm4gZT09PXJbdF19KX1mdW5jdGlvbiB1KGUsdCxuKXtzd2l0Y2godCl7Y2FzZSJmbGFnIjpyZXR1cm4gbihlLCJcdWQ4M2NcdWRmZjNcdWZlMGZcdTIwMGRcdTI2YTdcdWZlMGYiLCJcdWQ4M2NcdWRmZjNcdWZlMGZcdTIwMGJcdTI2YTdcdWZlMGYiKT8hMTohbihlLCJcdWQ4M2NcdWRkZmFcdWQ4M2NcdWRkZjMiLCJcdWQ4M2NcdWRkZmFcdTIwMGJcdWQ4M2NcdWRkZjMiKSYmIW4oZSwiXHVkODNjXHVkZmY0XHVkYjQwXHVkYzY3XHVkYjQwXHVkYzYyXHVkYjQwXHVkYzY1XHVkYjQwXHVkYzZlXHVkYjQwXHVkYzY3XHVkYjQwXHVkYzdmIiwiXHVkODNjXHVkZmY0XHUyMDBiXHVkYjQwXHVkYzY3XHUyMDBiXHVkYjQwXHVkYzYyXHUyMDBiXHVkYjQwXHVkYzY1XHUyMDBiXHVkYjQwXHVkYzZlXHUyMDBiXHVkYjQwXHVkYzY3XHUyMDBiXHVkYjQwXHVkYzdmIik7Y2FzZSJlbW9qaSI6cmV0dXJuIW4oZSwiXHVkODNlXHVkZWYxXHVkODNjXHVkZmZiXHUyMDBkXHVkODNlXHVkZWYyXHVkODNjXHVkZmZmIiwiXHVkODNlXHVkZWYxXHVkODNjXHVkZmZiXHUyMDBiXHVkODNlXHVkZWYyXHVkODNjXHVkZmZmIil9cmV0dXJuITF9ZnVuY3Rpb24gZihlLHQsbil7dmFyIHI9InVuZGVmaW5lZCIhPXR5cGVvZiBXb3JrZXJHbG9iYWxTY29wZSYmc2VsZiBpbnN0YW5jZW9mIFdvcmtlckdsb2JhbFNjb3BlP25ldyBPZmZzY3JlZW5DYW52YXMoMzAwLDE1MCk6aS5jcmVhdGVFbGVtZW50KCJjYW52YXMiKSxhPXIuZ2V0Q29udGV4dCgiMmQiLHt3aWxsUmVhZEZyZXF1ZW50bHk6ITB9KSxvPShhLnRleHRCYXNlbGluZT0idG9wIixhLmZvbnQ9IjYwMCAzMnB4IEFyaWFsIix7fSk7cmV0dXJuIGUuZm9yRWFjaChmdW5jdGlvbihlKXtvW2VdPXQoYSxlLG4pfSksb31mdW5jdGlvbiB0KGUpe3ZhciB0PWkuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7dC5zcmM9ZSx0LmRlZmVyPSEwLGkuaGVhZC5hcHBlbmRDaGlsZCh0KX0idW5kZWZpbmVkIiE9dHlwZW9mIFByb21pc2UmJihvPSJ3cEVtb2ppU2V0dGluZ3NTdXBwb3J0cyIscz1bImZsYWciLCJlbW9qaSJdLG4uc3VwcG9ydHM9e2V2ZXJ5dGhpbmc6ITAsZXZlcnl0aGluZ0V4Y2VwdEZsYWc6ITB9LGU9bmV3IFByb21pc2UoZnVuY3Rpb24oZSl7aS5hZGRFdmVudExpc3RlbmVyKCJET01Db250ZW50TG9hZGVkIixlLHtvbmNlOiEwfSl9KSxuZXcgUHJvbWlzZShmdW5jdGlvbih0KXt2YXIgbj1mdW5jdGlvbigpe3RyeXt2YXIgZT1KU09OLnBhcnNlKHNlc3Npb25TdG9yYWdlLmdldEl0ZW0obykpO2lmKCJvYmplY3QiPT10eXBlb2YgZSYmIm51bWJlciI9PXR5cGVvZiBlLnRpbWVzdGFtcCYmKG5ldyBEYXRlKS52YWx1ZU9mKCk8ZS50aW1lc3RhbXArNjA0ODAwJiYib2JqZWN0Ij09dHlwZW9mIGUuc3VwcG9ydFRlc3RzKXJldHVybiBlLnN1cHBvcnRUZXN0c31jYXRjaChlKXt9cmV0dXJuIG51bGx9KCk7aWYoIW4pe2lmKCJ1bmRlZmluZWQiIT10eXBlb2YgV29ya2VyJiYidW5kZWZpbmVkIiE9dHlwZW9mIE9mZnNjcmVlbkNhbnZhcyYmInVuZGVmaW5lZCIhPXR5cGVvZiBVUkwmJlVSTC5jcmVhdGVPYmplY3RVUkwmJiJ1bmRlZmluZWQiIT10eXBlb2YgQmxvYil0cnl7dmFyIGU9InBvc3RNZXNzYWdlKCIrZi50b1N0cmluZygpKyIoIitbSlNPTi5zdHJpbmdpZnkocyksdS50b1N0cmluZygpLHAudG9TdHJpbmcoKV0uam9pbigiLCIpKyIpKTsiLHI9bmV3IEJsb2IoW2VdLHt0eXBlOiJ0ZXh0L2phdmFzY3JpcHQifSksYT1uZXcgV29ya2VyKFVSTC5jcmVhdGVPYmplY3RVUkwocikse25hbWU6IndwVGVzdEVtb2ppU3VwcG9ydHMifSk7cmV0dXJuIHZvaWQoYS5vbm1lc3NhZ2U9ZnVuY3Rpb24oZSl7YyhuPWUuZGF0YSksYS50ZXJtaW5hdGUoKSx0KG4pfSl9Y2F0Y2goZSl7fWMobj1mKHMsdSxwKSl9dChuKX0pLnRoZW4oZnVuY3Rpb24oZSl7Zm9yKHZhciB0IGluIGUpbi5zdXBwb3J0c1t0XT1lW3RdLG4uc3VwcG9ydHMuZXZlcnl0aGluZz1uLnN1cHBvcnRzLmV2ZXJ5dGhpbmcmJm4uc3VwcG9ydHNbdF0sImZsYWciIT09dCYmKG4uc3VwcG9ydHMuZXZlcnl0aGluZ0V4Y2VwdEZsYWc9bi5zdXBwb3J0cy5ldmVyeXRoaW5nRXhjZXB0RmxhZyYmbi5zdXBwb3J0c1t0XSk7bi5zdXBwb3J0cy5ldmVyeXRoaW5nRXhjZXB0RmxhZz1uLnN1cHBvcnRzLmV2ZXJ5dGhpbmdFeGNlcHRGbGFnJiYhbi5zdXBwb3J0cy5mbGFnLG4uRE9NUmVhZHk9ITEsbi5yZWFkeUNhbGxiYWNrPWZ1bmN0aW9uKCl7bi5ET01SZWFkeT0hMH19KS50aGVuKGZ1bmN0aW9uKCl7cmV0dXJuIGV9KS50aGVuKGZ1bmN0aW9uKCl7dmFyIGU7bi5zdXBwb3J0cy5ldmVyeXRoaW5nfHwobi5yZWFkeUNhbGxiYWNrKCksKGU9bi5zb3VyY2V8fHt9KS5jb25jYXRlbW9qaT90KGUuY29uY2F0ZW1vamkpOmUud3BlbW9qaSYmZS50d2Vtb2ppJiYodChlLnR3ZW1vamkpLHQoZS53cGVtb2ppKSkpfSkpfSgod2luZG93LGRvY3VtZW50KSx3aW5kb3cuX3dwZW1vamlTZXR0aW5ncyk7Cg=="
+      data-rocket-status="executed"
+    >
+      window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/learnskillstoday.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.3"}};
+      /*! This file is auto-generated */
+      !function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+    </script>
+    <style id="wp-emoji-styles-inline-css">
+      img.wp-smiley,
+      img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 0.07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+      }
+    </style>
+    <style id="classic-theme-styles-inline-css">
+      /*! This file is auto-generated */
+      .wp-block-button__link {
+        color: #fff;
+        background-color: #32373c;
+        border-radius: 9999px;
+        box-shadow: none;
+        text-decoration: none;
+        padding: calc(0.667em + 2px) calc(1.333em + 2px);
+        font-size: 1.125em;
+      }
+      .wp-block-file__button {
+        background: #32373c;
+        color: #fff;
+        text-decoration: none;
+      }
+    </style>
+    <style id="global-styles-inline-css">
+      body {
+        --wp--preset--color--black: #000000;
+        --wp--preset--color--cyan-bluish-gray: #abb8c3;
+        --wp--preset--color--white: #ffffff;
+        --wp--preset--color--pale-pink: #f78da7;
+        --wp--preset--color--vivid-red: #cf2e2e;
+        --wp--preset--color--luminous-vivid-orange: #ff6900;
+        --wp--preset--color--luminous-vivid-amber: #fcb900;
+        --wp--preset--color--light-green-cyan: #7bdcb5;
+        --wp--preset--color--vivid-green-cyan: #00d084;
+        --wp--preset--color--pale-cyan-blue: #8ed1fc;
+        --wp--preset--color--vivid-cyan-blue: #0693e3;
+        --wp--preset--color--vivid-purple: #9b51e0;
+        --wp--preset--color--dark-gray: #28303d;
+        --wp--preset--color--gray: #39414d;
+        --wp--preset--color--green: #d1e4dd;
+        --wp--preset--color--blue: #d1dfe4;
+        --wp--preset--color--purple: #d1d1e4;
+        --wp--preset--color--red: #e4d1d1;
+        --wp--preset--color--orange: #e4dad1;
+        --wp--preset--color--yellow: #eeeadd;
+        --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(
+          135deg,
+          rgba(6, 147, 227, 1) 0%,
+          rgb(155, 81, 224) 100%
+        );
+        --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(
+          135deg,
+          rgb(122, 220, 180) 0%,
+          rgb(0, 208, 130) 100%
+        );
+        --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(
+          135deg,
+          rgba(252, 185, 0, 1) 0%,
+          rgba(255, 105, 0, 1) 100%
+        );
+        --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(
+          135deg,
+          rgba(255, 105, 0, 1) 0%,
+          rgb(207, 46, 46) 100%
+        );
+        --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(
+          135deg,
+          rgb(238, 238, 238) 0%,
+          rgb(169, 184, 195) 100%
+        );
+        --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(
+          135deg,
+          rgb(74, 234, 220) 0%,
+          rgb(151, 120, 209) 20%,
+          rgb(207, 42, 186) 40%,
+          rgb(238, 44, 130) 60%,
+          rgb(251, 105, 98) 80%,
+          rgb(254, 248, 76) 100%
+        );
+        --wp--preset--gradient--blush-light-purple: linear-gradient(
+          135deg,
+          rgb(255, 206, 236) 0%,
+          rgb(152, 150, 240) 100%
+        );
+        --wp--preset--gradient--blush-bordeaux: linear-gradient(
+          135deg,
+          rgb(254, 205, 165) 0%,
+          rgb(254, 45, 45) 50%,
+          rgb(107, 0, 62) 100%
+        );
+        --wp--preset--gradient--luminous-dusk: linear-gradient(
+          135deg,
+          rgb(255, 203, 112) 0%,
+          rgb(199, 81, 192) 50%,
+          rgb(65, 88, 208) 100%
+        );
+        --wp--preset--gradient--pale-ocean: linear-gradient(
+          135deg,
+          rgb(255, 245, 203) 0%,
+          rgb(182, 227, 212) 50%,
+          rgb(51, 167, 181) 100%
+        );
+        --wp--preset--gradient--electric-grass: linear-gradient(
+          135deg,
+          rgb(202, 248, 128) 0%,
+          rgb(113, 206, 126) 100%
+        );
+        --wp--preset--gradient--midnight: linear-gradient(
+          135deg,
+          rgb(2, 3, 129) 0%,
+          rgb(40, 116, 252) 100%
+        );
+        --wp--preset--gradient--purple-to-yellow: linear-gradient(
+          160deg,
+          #d1d1e4 0%,
+          #eeeadd 100%
+        );
+        --wp--preset--gradient--yellow-to-purple: linear-gradient(
+          160deg,
+          #eeeadd 0%,
+          #d1d1e4 100%
+        );
+        --wp--preset--gradient--green-to-yellow: linear-gradient(
+          160deg,
+          #d1e4dd 0%,
+          #eeeadd 100%
+        );
+        --wp--preset--gradient--yellow-to-green: linear-gradient(
+          160deg,
+          #eeeadd 0%,
+          #d1e4dd 100%
+        );
+        --wp--preset--gradient--red-to-yellow: linear-gradient(
+          160deg,
+          #e4d1d1 0%,
+          #eeeadd 100%
+        );
+        --wp--preset--gradient--yellow-to-red: linear-gradient(
+          160deg,
+          #eeeadd 0%,
+          #e4d1d1 100%
+        );
+        --wp--preset--gradient--purple-to-red: linear-gradient(
+          160deg,
+          #d1d1e4 0%,
+          #e4d1d1 100%
+        );
+        --wp--preset--gradient--red-to-purple: linear-gradient(
+          160deg,
+          #e4d1d1 0%,
+          #d1d1e4 100%
+        );
+        --wp--preset--font-size--small: 18px;
+        --wp--preset--font-size--medium: 20px;
+        --wp--preset--font-size--large: 24px;
+        --wp--preset--font-size--x-large: 42px;
+        --wp--preset--font-size--extra-small: 16px;
+        --wp--preset--font-size--normal: 20px;
+        --wp--preset--font-size--extra-large: 40px;
+        --wp--preset--font-size--huge: 96px;
+        --wp--preset--font-size--gigantic: 144px;
+        --wp--preset--spacing--20: 0.44rem;
+        --wp--preset--spacing--30: 0.67rem;
+        --wp--preset--spacing--40: 1rem;
+        --wp--preset--spacing--50: 1.5rem;
+        --wp--preset--spacing--60: 2.25rem;
+        --wp--preset--spacing--70: 3.38rem;
+        --wp--preset--spacing--80: 5.06rem;
+        --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+        --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+        --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+        --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1),
+          6px 6px rgba(0, 0, 0, 1);
+        --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+      }
+      :where(.is-layout-flex) {
+        gap: 0.5em;
+      }
+      :where(.is-layout-grid) {
+        gap: 0.5em;
+      }
+      body .is-layout-flow > .alignleft {
+        float: left;
+        margin-inline-start: 0;
+        margin-inline-end: 2em;
+      }
+      body .is-layout-flow > .alignright {
+        float: right;
+        margin-inline-start: 2em;
+        margin-inline-end: 0;
+      }
+      body .is-layout-flow > .aligncenter {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      body .is-layout-constrained > .alignleft {
+        float: left;
+        margin-inline-start: 0;
+        margin-inline-end: 2em;
+      }
+      body .is-layout-constrained > .alignright {
+        float: right;
+        margin-inline-start: 2em;
+        margin-inline-end: 0;
+      }
+      body .is-layout-constrained > .aligncenter {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      body
+        .is-layout-constrained
+        > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+        max-width: var(--wp--style--global--content-size);
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      body .is-layout-constrained > .alignwide {
+        max-width: var(--wp--style--global--wide-size);
+      }
+      body .is-layout-flex {
+        display: flex;
+      }
+      body .is-layout-flex {
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      body .is-layout-flex > * {
+        margin: 0;
+      }
+      body .is-layout-grid {
+        display: grid;
+      }
+      body .is-layout-grid > * {
+        margin: 0;
+      }
+      :where(.wp-block-columns.is-layout-flex) {
+        gap: 2em;
+      }
+      :where(.wp-block-columns.is-layout-grid) {
+        gap: 2em;
+      }
+      :where(.wp-block-post-template.is-layout-flex) {
+        gap: 1.25em;
+      }
+      :where(.wp-block-post-template.is-layout-grid) {
+        gap: 1.25em;
+      }
+      .has-black-color {
+        color: var(--wp--preset--color--black) !important;
+      }
+      .has-cyan-bluish-gray-color {
+        color: var(--wp--preset--color--cyan-bluish-gray) !important;
+      }
+      .has-white-color {
+        color: var(--wp--preset--color--white) !important;
+      }
+      .has-pale-pink-color {
+        color: var(--wp--preset--color--pale-pink) !important;
+      }
+      .has-vivid-red-color {
+        color: var(--wp--preset--color--vivid-red) !important;
+      }
+      .has-luminous-vivid-orange-color {
+        color: var(--wp--preset--color--luminous-vivid-orange) !important;
+      }
+      .has-luminous-vivid-amber-color {
+        color: var(--wp--preset--color--luminous-vivid-amber) !important;
+      }
+      .has-light-green-cyan-color {
+        color: var(--wp--preset--color--light-green-cyan) !important;
+      }
+      .has-vivid-green-cyan-color {
+        color: var(--wp--preset--color--vivid-green-cyan) !important;
+      }
+      .has-pale-cyan-blue-color {
+        color: var(--wp--preset--color--pale-cyan-blue) !important;
+      }
+      .has-vivid-cyan-blue-color {
+        color: var(--wp--preset--color--vivid-cyan-blue) !important;
+      }
+      .has-vivid-purple-color {
+        color: var(--wp--preset--color--vivid-purple) !important;
+      }
+      .has-black-background-color {
+        background-color: var(--wp--preset--color--black) !important;
+      }
+      .has-cyan-bluish-gray-background-color {
+        background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+      }
+      .has-white-background-color {
+        background-color: var(--wp--preset--color--white) !important;
+      }
+      .has-pale-pink-background-color {
+        background-color: var(--wp--preset--color--pale-pink) !important;
+      }
+      .has-vivid-red-background-color {
+        background-color: var(--wp--preset--color--vivid-red) !important;
+      }
+      .has-luminous-vivid-orange-background-color {
+        background-color: var(
+          --wp--preset--color--luminous-vivid-orange
+        ) !important;
+      }
+      .has-luminous-vivid-amber-background-color {
+        background-color: var(
+          --wp--preset--color--luminous-vivid-amber
+        ) !important;
+      }
+      .has-light-green-cyan-background-color {
+        background-color: var(--wp--preset--color--light-green-cyan) !important;
+      }
+      .has-vivid-green-cyan-background-color {
+        background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+      }
+      .has-pale-cyan-blue-background-color {
+        background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+      }
+      .has-vivid-cyan-blue-background-color {
+        background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+      }
+      .has-vivid-purple-background-color {
+        background-color: var(--wp--preset--color--vivid-purple) !important;
+      }
+      .has-black-border-color {
+        border-color: var(--wp--preset--color--black) !important;
+      }
+      .has-cyan-bluish-gray-border-color {
+        border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+      }
+      .has-white-border-color {
+        border-color: var(--wp--preset--color--white) !important;
+      }
+      .has-pale-pink-border-color {
+        border-color: var(--wp--preset--color--pale-pink) !important;
+      }
+      .has-vivid-red-border-color {
+        border-color: var(--wp--preset--color--vivid-red) !important;
+      }
+      .has-luminous-vivid-orange-border-color {
+        border-color: var(
+          --wp--preset--color--luminous-vivid-orange
+        ) !important;
+      }
+      .has-luminous-vivid-amber-border-color {
+        border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+      }
+      .has-light-green-cyan-border-color {
+        border-color: var(--wp--preset--color--light-green-cyan) !important;
+      }
+      .has-vivid-green-cyan-border-color {
+        border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+      }
+      .has-pale-cyan-blue-border-color {
+        border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+      }
+      .has-vivid-cyan-blue-border-color {
+        border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+      }
+      .has-vivid-purple-border-color {
+        border-color: var(--wp--preset--color--vivid-purple) !important;
+      }
+      .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+        background: var(
+          --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple
+        ) !important;
+      }
+      .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+        background: var(
+          --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan
+        ) !important;
+      }
+      .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+        background: var(
+          --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange
+        ) !important;
+      }
+      .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+        background: var(
+          --wp--preset--gradient--luminous-vivid-orange-to-vivid-red
+        ) !important;
+      }
+      .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+        background: var(
+          --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray
+        ) !important;
+      }
+      .has-cool-to-warm-spectrum-gradient-background {
+        background: var(
+          --wp--preset--gradient--cool-to-warm-spectrum
+        ) !important;
+      }
+      .has-blush-light-purple-gradient-background {
+        background: var(--wp--preset--gradient--blush-light-purple) !important;
+      }
+      .has-blush-bordeaux-gradient-background {
+        background: var(--wp--preset--gradient--blush-bordeaux) !important;
+      }
+      .has-luminous-dusk-gradient-background {
+        background: var(--wp--preset--gradient--luminous-dusk) !important;
+      }
+      .has-pale-ocean-gradient-background {
+        background: var(--wp--preset--gradient--pale-ocean) !important;
+      }
+      .has-electric-grass-gradient-background {
+        background: var(--wp--preset--gradient--electric-grass) !important;
+      }
+      .has-midnight-gradient-background {
+        background: var(--wp--preset--gradient--midnight) !important;
+      }
+      .has-small-font-size {
+        font-size: var(--wp--preset--font-size--small) !important;
+      }
+      .has-medium-font-size {
+        font-size: var(--wp--preset--font-size--medium) !important;
+      }
+      .has-large-font-size {
+        font-size: var(--wp--preset--font-size--large) !important;
+      }
+      .has-x-large-font-size {
+        font-size: var(--wp--preset--font-size--x-large) !important;
+      }
+      .wp-block-navigation a:where(:not(.wp-element-button)) {
+        color: inherit;
+      }
+      :where(.wp-block-post-template.is-layout-flex) {
+        gap: 1.25em;
+      }
+      :where(.wp-block-post-template.is-layout-grid) {
+        gap: 1.25em;
+      }
+      :where(.wp-block-columns.is-layout-flex) {
+        gap: 2em;
+      }
+      :where(.wp-block-columns.is-layout-grid) {
+        gap: 2em;
+      }
+      .wp-block-pullquote {
+        font-size: 1.5em;
+        line-height: 1.6;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      id="twenty-twenty-one-print-style-css"
+      href="https://learnskillstoday.com/wp-content/themes/twentytwentyone/assets/css/print.css?ver=1.8"
+      media="print"
+    />
+
+    <style id="elementor-icons-inline-css">
+      .elementor-add-new-section .elementor-add-templately-promo-button {
+        background-color: #5d4fff;
+        background-image: url(https://learnskillstoday.com/wp-content/plugins/essential-addons-for-elementor-lite/assets/admin/images/templately/logo-icon.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: relative;
+      }
+
+      .elementor-add-new-section .elementor-add-templately-promo-button > i {
+        height: 12px;
+      }
+
+      body .elementor-add-new-section .elementor-add-section-area-button {
+        margin-left: 0;
+      }
+
+      .elementor-add-new-section .elementor-add-templately-promo-button {
+        background-color: #5d4fff;
+        background-image: url(https://learnskillstoday.com/wp-content/plugins/essential-addons-for-elementor-lite/assets/admin/images/templately/logo-icon.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: relative;
+      }
+
+      .elementor-add-new-section .elementor-add-templately-promo-button > i {
+        height: 12px;
+      }
+
+      body .elementor-add-new-section .elementor-add-section-area-button {
+        margin-left: 0;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      id="elementor-post-4-css"
+      href="https://learnskillstoday.com/wp-content/uploads/elementor/css/post-4.css?ver=1701705682"
+      media="all"
+    />
+
+    <link
+      rel="stylesheet"
+      id="elementor-global-css"
+      href="https://learnskillstoday.com/wp-content/uploads/elementor/css/global.css?ver=1701705683"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="elementor-post-1236-css"
+      href="https://learnskillstoday.com/wp-content/uploads/elementor/css/post-1236.css?ver=1706947384"
+      media="all"
+    />
+
+    <link
+      rel="stylesheet"
+      id="google-fonts-1-css"
+      href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CMontserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap&amp;ver=6.4.3"
+      media="all"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <script
+      id="jquery-core-js"
+      src="https://learnskillstoday.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="jquery-migrate-js"
+      src="https://learnskillstoday.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"
+      data-rocket-status="executed"
+    ></script>
+
+    <!-- Google Analytics snippet added by Site Kit -->
+    <script
+      id="google_gtagjs-js"
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=GT-P844D67"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="google_gtagjs-js-after"
+      src="data:text/javascript;base64,CndpbmRvdy5kYXRhTGF5ZXIgPSB3aW5kb3cuZGF0YUxheWVyIHx8IFtdO2Z1bmN0aW9uIGd0YWcoKXtkYXRhTGF5ZXIucHVzaChhcmd1bWVudHMpO30KZ3RhZygnc2V0JywgJ2xpbmtlcicsIHsiZG9tYWlucyI6WyJsZWFybnNraWxsc3RvZGF5LmNvbSJdfSApOwpndGFnKCJqcyIsIG5ldyBEYXRlKCkpOwpndGFnKCJzZXQiLCAiZGV2ZWxvcGVyX2lkLmRaVE5pTVQiLCB0cnVlKTsKZ3RhZygiY29uZmlnIiwgIkdULVA4NDRENjciKTsK"
+      data-rocket-status="executed"
+    >
+      window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+      gtag('set', 'linker', {"domains":["learnskillstoday.com"]} );
+      gtag("js", new Date());
+      gtag("set", "developer_id.dZTNiMT", true);
+      gtag("config", "GT-P844D67");
+    </script>
+
+    <!-- End Google Analytics snippet added by Site Kit -->
+    <link
+      rel="https://api.w.org/"
+      href="https://learnskillstoday.com/wp-json/"
+    />
+    <link
+      rel="alternate"
+      type="application/json"
+      href="https://learnskillstoday.com/wp-json/wp/v2/pages/1236"
+    />
+    <link
+      rel="EditURI"
+      type="application/rsd+xml"
+      title="RSD"
+      href="https://learnskillstoday.com/xmlrpc.php?rsd"
+    />
+    <meta name="generator" content="WordPress 6.4.3" />
+    <link rel="shortlink" href="https://learnskillstoday.com/?p=1236" />
+    <link
+      rel="alternate"
+      type="application/json+oembed"
+      href="https://learnskillstoday.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Flearnskillstoday.com%2Fcartoon-hindi-stories-bundle-pack%2F"
+    />
+    <link
+      rel="alternate"
+      type="text/xml+oembed"
+      href="https://learnskillstoday.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Flearnskillstoday.com%2Fcartoon-hindi-stories-bundle-pack%2F&amp;format=xml"
+    />
+    <style>
+      .notifyjs-bootstrap-base {
+        background-color: #f2dede !important;
+        border-color: #f2dede !important;
+        color: #b94a48 !important;
+      }
+    </style>
+    <meta name="generator" content="Site Kit by Google 1.113.0" />
+    <meta
+      name="generator"
+      content="Elementor 3.19.3; features: e_optimized_assets_loading, e_optimized_css_loading, additional_custom_breakpoints, block_editor_assets_optimize, e_image_loading_optimization; settings: css_print_method-external, google_font-enabled, font_display-swap"
+    />
+
+    <!-- Google Tag Manager snippet added by Site Kit -->
+    <script
+      src="data:text/javascript;base64,CgkJCSggZnVuY3Rpb24oIHcsIGQsIHMsIGwsIGkgKSB7CgkJCQl3W2xdID0gd1tsXSB8fCBbXTsKCQkJCXdbbF0ucHVzaCggeydndG0uc3RhcnQnOiBuZXcgRGF0ZSgpLmdldFRpbWUoKSwgZXZlbnQ6ICdndG0uanMnfSApOwoJCQkJdmFyIGYgPSBkLmdldEVsZW1lbnRzQnlUYWdOYW1lKCBzIClbMF0sCgkJCQkJaiA9IGQuY3JlYXRlRWxlbWVudCggcyApLCBkbCA9IGwgIT0gJ2RhdGFMYXllcicgPyAnJmw9JyArIGwgOiAnJzsKCQkJCWouYXN5bmMgPSB0cnVlOwoJCQkJai5zcmMgPSAnaHR0cHM6Ly93d3cuZ29vZ2xldGFnbWFuYWdlci5jb20vZ3RtLmpzP2lkPScgKyBpICsgZGw7CgkJCQlmLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKCBqLCBmICk7CgkJCX0gKSggd2luZG93LCBkb2N1bWVudCwgJ3NjcmlwdCcsICdkYXRhTGF5ZXInLCAnR1RNLVQ4UlJIVzlHJyApOwoJCQkK"
+      data-rocket-status="executed"
+    >
+      ( function( w, d, s, l, i ) {
+          w[l] = w[l] || [];
+          w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+          var f = d.getElementsByTagName( s )[0],
+              j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore( j, f );
+      } )( window, document, 'script', 'dataLayer', 'GTM-T8RRHW9G' );
+    </script>
+
+    <!-- End Google Tag Manager snippet added by Site Kit -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <script
+      src="https://learnskillstoday.com/wp-includes/js/wp-emoji-release.min.js?ver=6.4.3"
+      defer=""
+    ></script>
+  </head>
+  <body
+    class="page-template page-template-elementor_canvas page page-id-1236 wp-embed-responsive is-light-theme singular no-widgets elementor-default elementor-template-canvas elementor-kit-4 elementor-page elementor-page-1236 e--ua-blink e--ua-chrome e--ua-webkit"
+    data-elementor-device-mode="desktop"
+    cz-shortcut-listen="true"
+  >
+    <!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-T8RRHW9G"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+    <div
+      data-elementor-type="wp-page"
+      data-elementor-id="1236"
+      class="elementor elementor-1236"
+      data-elementor-post-type="page"
+    >
+      <section
+        class="elementor-section elementor-top-section elementor-element elementor-element-02faea2 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+        data-id="02faea2"
+        data-element_type="section"
+      >
+        <div class="elementor-container elementor-column-gap-default">
+          <div
+            class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8c50c8f"
+            data-id="8c50c8f"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-848b8df elementor-widget elementor-widget-html"
+                data-id="848b8df"
+                data-element_type="widget"
+                data-widget_type="html.default"
+              >
+                <div class="elementor-widget-container">
+                  <!-- Meta Pixel Code -->
+                  <script
+                    src="data:text/javascript;base64,CiFmdW5jdGlvbihmLGIsZSx2LG4sdCxzKQp7aWYoZi5mYnEpcmV0dXJuO249Zi5mYnE9ZnVuY3Rpb24oKXtuLmNhbGxNZXRob2Q/Cm4uY2FsbE1ldGhvZC5hcHBseShuLGFyZ3VtZW50cyk6bi5xdWV1ZS5wdXNoKGFyZ3VtZW50cyl9OwppZighZi5fZmJxKWYuX2ZicT1uO24ucHVzaD1uO24ubG9hZGVkPSEwO24udmVyc2lvbj0nMi4wJzsKbi5xdWV1ZT1bXTt0PWIuY3JlYXRlRWxlbWVudChlKTt0LmFzeW5jPSEwOwp0LnNyYz12O3M9Yi5nZXRFbGVtZW50c0J5VGFnTmFtZShlKVswXTsKcy5wYXJlbnROb2RlLmluc2VydEJlZm9yZSh0LHMpfSh3aW5kb3csIGRvY3VtZW50LCdzY3JpcHQnLAonaHR0cHM6Ly9jb25uZWN0LmZhY2Vib29rLm5ldC9lbl9VUy9mYmV2ZW50cy5qcycpOwpmYnEoJ2luaXQnLCAnMzE0ODc5OTc4MTQxMjA5Jyk7CmZicSgndHJhY2snLCAnUGFnZVZpZXcnKTsK"
+                    data-rocket-status="executed"
+                  >
+                    !function(f,b,e,v,n,t,s)
+                    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                    n.queue=[];t=b.createElement(e);t.async=!0;
+                    t.src=v;s=b.getElementsByTagName(e)[0];
+                    s.parentNode.insertBefore(t,s)}(window, document,'script',
+                    'https://connect.facebook.net/en_US/fbevents.js');
+                    fbq('init', '314879978141209');
+                    fbq('track', 'PageView');
+                  </script>
+                  <noscript
+                    ><img
+                      height="1"
+                      width="1"
+                      style="display: none"
+                      src="https://www.facebook.com/tr?id=314879978141209&ev=PageView&noscript=1"
+                  /></noscript>
+                  <!-- End Meta Pixel Code -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="elementor-section elementor-top-section elementor-element elementor-element-9e8c486 elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+        data-id="9e8c486"
+        data-element_type="section"
+        data-settings='{"background_background":"classic"}'
+      >
+        <div class="elementor-container elementor-column-gap-default">
+          <div
+            class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-171c436a"
+            data-id="171c436a"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-4007c075 elementor-widget elementor-widget-text-editor"
+                data-id="4007c075"
+                data-element_type="widget"
+                data-widget_type="text-editor.default"
+              >
+                <div class="elementor-widget-container">
+                  <style>
+                    /*! elementor - v3.19.0 - 26-02-2024 */
+                    .elementor-widget-text-editor.elementor-drop-cap-view-stacked
+                      .elementor-drop-cap {
+                      background-color: #69727d;
+                      color: #fff;
+                    }
+                    .elementor-widget-text-editor.elementor-drop-cap-view-framed
+                      .elementor-drop-cap {
+                      color: #69727d;
+                      border: 3px solid;
+                      background-color: transparent;
+                    }
+                    .elementor-widget-text-editor:not(
+                        .elementor-drop-cap-view-default
+                      )
+                      .elementor-drop-cap {
+                      margin-top: 8px;
+                    }
+                    .elementor-widget-text-editor:not(
+                        .elementor-drop-cap-view-default
+                      )
+                      .elementor-drop-cap-letter {
+                      width: 1em;
+                      height: 1em;
+                    }
+                    .elementor-widget-text-editor .elementor-drop-cap {
+                      float: left;
+                      text-align: center;
+                      line-height: 1;
+                      font-size: 50px;
+                    }
+                    .elementor-widget-text-editor .elementor-drop-cap-letter {
+                      display: inline-block;
+                    }
+                  </style>
+                  आप भी YouTube पर Cartoon Videos अपलोड करके महीने का
+                  <span class="color7">1-2 लाख कमा सकते हो</span> 🤑
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-1b7f064 elementor-widget elementor-widget-text-editor"
+                data-id="1b7f064"
+                data-element_type="widget"
+                data-widget_type="text-editor.default"
+              >
+                <div class="elementor-widget-container">
+                  <p>
+                    आपको Bundle में मिलेंगे 2,000+ Hindi Cartoon Stories Video
+                    <span class="color2">(100% COPYRIGHT FREE)</span>
+                  </p>
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-d300be7 elementor-widget elementor-widget-video"
+                data-id="d300be7"
+                data-element_type="widget"
+                data-settings='{"video_type":"vimeo"}'
+                data-widget_type="video.default"
+              >
+                <div class="elementor-widget-container">
+                  <style>
+                    /*! elementor - v3.19.0 - 26-02-2024 */
+                    .elementor-widget-video .elementor-widget-container {
+                      overflow: hidden;
+                      transform: translateZ(0);
+                    }
+                    .elementor-widget-video .elementor-wrapper {
+                      aspect-ratio: var(--video-aspect-ratio);
+                    }
+                    .elementor-widget-video .elementor-wrapper iframe,
+                    .elementor-widget-video .elementor-wrapper video {
+                      height: 100%;
+                      width: 100%;
+                      display: flex;
+                      border: none;
+                      background-color: #000;
+                    }
+                    @supports not (aspect-ratio: 1/1) {
+                      .elementor-widget-video .elementor-wrapper {
+                        position: relative;
+                        overflow: hidden;
+                        height: 0;
+                        padding-bottom: calc(100% / var(--video-aspect-ratio));
+                      }
+                      .elementor-widget-video .elementor-wrapper iframe,
+                      .elementor-widget-video .elementor-wrapper video {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                      }
+                    }
+                    .elementor-widget-video
+                      .elementor-open-inline
+                      .elementor-custom-embed-image-overlay {
+                      position: absolute;
+                      top: 0;
+                      right: 0;
+                      bottom: 0;
+                      left: 0;
+                      background-size: cover;
+                      background-position: 50%;
+                    }
+                    .elementor-widget-video
+                      .elementor-custom-embed-image-overlay {
+                      cursor: pointer;
+                      text-align: center;
+                    }
+                    .elementor-widget-video
+                      .elementor-custom-embed-image-overlay:hover
+                      .elementor-custom-embed-play
+                      i {
+                      opacity: 1;
+                    }
+                    .elementor-widget-video
+                      .elementor-custom-embed-image-overlay
+                      img {
+                      display: block;
+                      width: 100%;
+                      aspect-ratio: var(--video-aspect-ratio);
+                      -o-object-fit: cover;
+                      object-fit: cover;
+                      -o-object-position: center center;
+                      object-position: center center;
+                    }
+                    @supports not (aspect-ratio: 1/1) {
+                      .elementor-widget-video
+                        .elementor-custom-embed-image-overlay {
+                        position: relative;
+                        overflow: hidden;
+                        height: 0;
+                        padding-bottom: calc(100% / var(--video-aspect-ratio));
+                      }
+                      .elementor-widget-video
+                        .elementor-custom-embed-image-overlay
+                        img {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                      }
+                    }
+                    .elementor-widget-video .e-hosted-video .elementor-video {
+                      -o-object-fit: cover;
+                      object-fit: cover;
+                    }
+                    .e-con-inner > .elementor-widget-video,
+                    .e-con > .elementor-widget-video {
+                      width: var(--container-widget-width);
+                      --flex-grow: var(--container-widget-flex-grow);
+                    }
+                  </style>
+                  <div class="elementor-wrapper elementor-open-inline">
+                    <iframe
+                      class="elementor-video-iframe"
+                      allowfullscreen=""
+                      allow="clipboard-write"
+                      title="vimeo Video Player"
+                      src="https://player.vimeo.com/video/883009618?color&amp;autopause=0&amp;loop=0&amp;muted=0&amp;title=1&amp;portrait=1&amp;byline=1#t="
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-4b117e9c elementor-icon-list--layout-inline elementor-align-center elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                data-id="4b117e9c"
+                data-element_type="widget"
+                data-widget_type="icon-list.default"
+              >
+                <div class="elementor-widget-container">
+                  <ul class="elementor-icon-list-items elementor-inline-items">
+                    <li class="elementor-icon-list-item elementor-inline-item">
+                      <span class="elementor-icon-list-icon">
+                        <i aria-hidden="true" class="fas fa-check"></i>
+                      </span>
+                      <span class="elementor-icon-list-text"
+                        >2,000+ Hindi Cartoon Stories</span
+                      >
+                    </li>
+                    <li class="elementor-icon-list-item elementor-inline-item">
+                      <span class="elementor-icon-list-icon">
+                        <i aria-hidden="true" class="fas fa-check"></i>
+                      </span>
+                      <span class="elementor-icon-list-text"
+                        >Attractive Thumbnails</span
+                      >
+                    </li>
+                    <li class="elementor-icon-list-item elementor-inline-item">
+                      <span class="elementor-icon-list-icon">
+                        <i aria-hidden="true" class="fas fa-check"></i>
+                      </span>
+                      <span class="elementor-icon-list-text"
+                        >SEO Description &amp; Tags</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-322c4b6b elementor-widget elementor-widget-eael-creative-button animated bounce"
+                data-id="322c4b6b"
+                data-element_type="widget"
+                data-settings='{"_animation":"bounce"}'
+                data-widget_type="eael-creative-button.default"
+              >
+                <div class="elementor-widget-container">
+                  <div class="eael-creative-button-wrapper">
+                    <a
+                      class="eael-creative-button eael-creative-button--default"
+                      href="https://rzp.io/l/n5XUeTmGip"
+                      data-text="Go!"
+                    >
+                      <div class="creative-button-inner">
+                        <span class="cretive-button-text"
+                          >👉🏾 JOIN करे सिर्फ <s>₹497</s> Rs ₹197 👈🏾 <br />
+                          <sub>Limited Time Offer (Ending Soon)</sub></span
+                        >
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="elementor-section elementor-top-section elementor-element elementor-element-93ad71d elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+        data-id="93ad71d"
+        data-element_type="section"
+        data-settings='{"background_background":"classic"}'
+      >
+        <div class="elementor-container elementor-column-gap-default">
+          <div
+            class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-106e3b9"
+            data-id="106e3b9"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-0555a23 elementor-widget elementor-widget-video"
+                data-id="0555a23"
+                data-element_type="widget"
+                data-settings='{"video_type":"vimeo"}'
+                data-widget_type="video.default"
+              >
+                <div class="elementor-widget-container">
+                  <div class="elementor-wrapper elementor-open-inline">
+                    <iframe
+                      class="elementor-video-iframe"
+                      allowfullscreen=""
+                      allow="clipboard-write"
+                      title="vimeo Video Player"
+                      src="https://player.vimeo.com/video/884122993?color&amp;autopause=0&amp;loop=0&amp;muted=0&amp;title=1&amp;portrait=1&amp;byline=1#t="
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4e94404"
+            data-id="4e94404"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-79c0d51 elementor-widget elementor-widget-video"
+                data-id="79c0d51"
+                data-element_type="widget"
+                data-settings='{"video_type":"vimeo"}'
+                data-widget_type="video.default"
+              >
+                <div class="elementor-widget-container">
+                  <div class="elementor-wrapper elementor-open-inline">
+                    <iframe
+                      class="elementor-video-iframe"
+                      allowfullscreen=""
+                      allow="clipboard-write"
+                      title="vimeo Video Player"
+                      src="https://player.vimeo.com/video/884123398?color&amp;autopause=0&amp;loop=0&amp;muted=0&amp;title=1&amp;portrait=1&amp;byline=1#t="
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="elementor-section elementor-top-section elementor-element elementor-element-fd5b073 elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+        data-id="fd5b073"
+        data-element_type="section"
+        data-settings='{"background_background":"classic"}'
+      >
+        <div class="elementor-container elementor-column-gap-default">
+          <div
+            class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-24359d8"
+            data-id="24359d8"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-c5ffce3 elementor-widget elementor-widget-video"
+                data-id="c5ffce3"
+                data-element_type="widget"
+                data-settings='{"video_type":"vimeo"}'
+                data-widget_type="video.default"
+              >
+                <div class="elementor-widget-container">
+                  <div class="elementor-wrapper elementor-open-inline">
+                    <iframe
+                      class="elementor-video-iframe"
+                      allowfullscreen=""
+                      allow="clipboard-write"
+                      title="vimeo Video Player"
+                      src="https://player.vimeo.com/video/884124741?color&amp;autopause=0&amp;loop=0&amp;muted=0&amp;title=1&amp;portrait=1&amp;byline=1#t="
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-9821ccf"
+            data-id="9821ccf"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-3da082c elementor-widget elementor-widget-video"
+                data-id="3da082c"
+                data-element_type="widget"
+                data-settings='{"video_type":"vimeo"}'
+                data-widget_type="video.default"
+              >
+                <div class="elementor-widget-container">
+                  <div class="elementor-wrapper elementor-open-inline">
+                    <iframe
+                      class="elementor-video-iframe"
+                      allowfullscreen=""
+                      allow="clipboard-write"
+                      title="vimeo Video Player"
+                      src="https://player.vimeo.com/video/884123929?color&amp;autopause=0&amp;loop=0&amp;muted=0&amp;title=1&amp;portrait=1&amp;byline=1#t="
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="elementor-section elementor-top-section elementor-element elementor-element-0c6ab49 elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+        data-id="0c6ab49"
+        data-element_type="section"
+        data-settings='{"background_background":"classic"}'
+      >
+        <div class="elementor-container elementor-column-gap-default">
+          <div
+            class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5de6843"
+            data-id="5de6843"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-9b525a6 elementor-widget elementor-widget-eael-creative-button animated bounce"
+                data-id="9b525a6"
+                data-element_type="widget"
+                data-settings="{}"
+                data-widget_type="eael-creative-button.default"
+              >
+                <div class="elementor-widget-container">
+                  <div class="eael-creative-button-wrapper">
+                    <a
+                      class="eael-creative-button eael-creative-button--default"
+                      href="https://rzp.io/l/n5XUeTmGip"
+                      data-text="Go!"
+                    >
+                      <div class="creative-button-inner">
+                        <span class="cretive-button-text"
+                          >👉🏾 JOIN करे सिर्फ <s>₹497</s> Rs ₹197 👈🏾 <br />
+                          <sub>Limited Time Offer (Ending Soon)</sub></span
+                        >
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-1143339 elementor-widget elementor-widget-text-editor"
+                data-id="1143339"
+                data-element_type="widget"
+                data-widget_type="text-editor.default"
+              >
+                <div class="elementor-widget-container">
+                  सुनिए हमारे STUDENTS का अनुभव!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="elementor-section elementor-top-section elementor-element elementor-element-1301ba3 elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+        data-id="1301ba3"
+        data-element_type="section"
+        data-settings='{"background_background":"classic"}'
+      >
+        <div class="elementor-container elementor-column-gap-default">
+          <div
+            class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-2206af7e"
+            data-id="2206af7e"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-7d9b2a51 elementor-widget__width-initial elementor-widget elementor-widget-image"
+                data-id="7d9b2a51"
+                data-element_type="widget"
+                data-widget_type="image.default"
+              >
+                <div class="elementor-widget-container">
+                  <style>
+                    /*! elementor - v3.19.0 - 26-02-2024 */
+                    .elementor-widget-image {
+                      text-align: center;
+                    }
+                    .elementor-widget-image a {
+                      display: inline-block;
+                    }
+                    .elementor-widget-image a img[src$=".svg"] {
+                      width: 48px;
+                    }
+                    .elementor-widget-image img {
+                      vertical-align: middle;
+                      display: inline-block;
+                    }
+                  </style>
+                  <img
+                    fetchpriority="high"
+                    decoding="async"
+                    width="511"
+                    height="1024"
+                    src="https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2023-18-10-05-27-4-511x1024.png"
+                    class="attachment-large size-large wp-image-915"
+                    alt=""
+                    srcset="
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2023-18-10-05-27-4-511x1024.png 511w,
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2023-18-10-05-27-4-150x300.png  150w,
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2023-18-10-05-27-4.png          600w
+                    "
+                    sizes="(max-width: 511px) 100vw, 511px"
+                    style="width: 100%; height: 200.33%; max-width: 600px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-2b4b87ff"
+            data-id="2b4b87ff"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-62a9829e elementor-widget elementor-widget-image"
+                data-id="62a9829e"
+                data-element_type="widget"
+                data-widget_type="image.default"
+              >
+                <div class="elementor-widget-container">
+                  <img
+                    decoding="async"
+                    width="393"
+                    height="1024"
+                    src="https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2-2023-18-10-05-28-28-393x1024.png"
+                    class="attachment-large size-large wp-image-916"
+                    alt=""
+                    srcset="
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2-2023-18-10-05-28-28-393x1024.png 393w,
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2-2023-18-10-05-28-28-115x300.png  115w,
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2-2023-18-10-05-28-28-590x1536.png 590w,
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2-2023-18-10-05-28-28.png          600w
+                    "
+                    sizes="(max-width: 393px) 100vw, 393px"
+                    style="width: 100%; height: 260.5%; max-width: 600px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-4299b7e6"
+            data-id="4299b7e6"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-1e8c82bf elementor-widget elementor-widget-image"
+                data-id="1e8c82bf"
+                data-element_type="widget"
+                data-widget_type="image.default"
+              >
+                <div class="elementor-widget-container">
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    width="539"
+                    height="1024"
+                    src="https://learnskillstoday.com/wp-content/uploads/2023/11/facebook_messenger_chat-2023-18-10-05-28-3-539x1024.png"
+                    class="attachment-large size-large wp-image-917"
+                    alt=""
+                    srcset="
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/facebook_messenger_chat-2023-18-10-05-28-3-539x1024.png 539w,
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/facebook_messenger_chat-2023-18-10-05-28-3-158x300.png  158w,
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/facebook_messenger_chat-2023-18-10-05-28-3.png          600w
+                    "
+                    sizes="(max-width: 539px) 100vw, 539px"
+                    style="width: 100%; height: 190%; max-width: 600px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="elementor-section elementor-top-section elementor-element elementor-element-18e4db7 elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+        data-id="18e4db7"
+        data-element_type="section"
+        data-settings='{"background_background":"classic"}'
+      >
+        <div class="elementor-container elementor-column-gap-default">
+          <div
+            class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-42d6335b"
+            data-id="42d6335b"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-67016432 elementor-widget elementor-widget-text-editor"
+                data-id="67016432"
+                data-element_type="widget"
+                data-widget_type="text-editor.default"
+              >
+                <div class="elementor-widget-container">
+                  अक्सर पूछे जाने वाले सवाल
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="elementor-section elementor-top-section elementor-element elementor-element-dc00222 elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+        data-id="dc00222"
+        data-element_type="section"
+        data-settings='{"background_background":"classic"}'
+      >
+        <div class="elementor-container elementor-column-gap-default">
+          <div
+            class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-218cf866"
+            data-id="218cf866"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-6970eb77 elementor-widget elementor-widget-eael-adv-accordion"
+                data-id="6970eb77"
+                data-element_type="widget"
+                data-widget_type="eael-adv-accordion.default"
+              >
+                <div class="elementor-widget-container">
+                  <div
+                    class="eael-adv-accordion"
+                    id="eael-adv-accordion-6970eb77"
+                    data-scroll-on-click="no"
+                    data-scroll-speed="300"
+                    data-accordion-id="6970eb77"
+                    data-accordion-type="accordion"
+                    data-toogle-speed="300"
+                  >
+                    <div class="eael-accordion-list">
+                      <div
+                        id="-youtube-"
+                        class="elementor-tab-title eael-accordion-header"
+                        tabindex="0"
+                        data-tab="1"
+                        aria-controls="elementor-tab-content-1761"
+                      >
+                        <span class="eael-advanced-accordion-icon-closed"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-plus"
+                          ></i></span
+                        ><span class="eael-advanced-accordion-icon-opened"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-minus"
+                          ></i></span
+                        ><span class="eael-accordion-tab-title"
+                          >क्या हम इन वीडियो को अपने YouTube चैनल पर अपलोड कर
+                          सकते हैं?</span
+                        ><i
+                          aria-hidden="true"
+                          class="fa-toggle fas fa-angle-right"
+                        ></i>
+                      </div>
+                      <div
+                        id="elementor-tab-content-1761"
+                        class="eael-accordion-content clearfix"
+                        data-tab="1"
+                        aria-labelledby="-youtube-"
+                      >
+                        <p>
+                          <span class="selectable-text copyable-text"
+                            >जी बिल्कुल आप इन वीडियो को अपने YouTube चैनल पर
+                            अपलोड कर सकते हो। आपको कोई भी Copyright आएगी।</span
+                          >
+                        </p>
+                      </div>
+                    </div>
+                    <div class="eael-accordion-list">
+                      <div
+                        id="payment-"
+                        class="elementor-tab-title eael-accordion-header"
+                        tabindex="0"
+                        data-tab="2"
+                        aria-controls="elementor-tab-content-1762"
+                      >
+                        <span class="eael-advanced-accordion-icon-closed"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-plus"
+                          ></i></span
+                        ><span class="eael-advanced-accordion-icon-opened"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-minus"
+                          ></i></span
+                        ><span class="eael-accordion-tab-title"
+                          >Payment के बाद हमको वीडियो कैसे मिलेगी?</span
+                        ><i
+                          aria-hidden="true"
+                          class="fa-toggle fas fa-angle-right"
+                        ></i>
+                      </div>
+                      <div
+                        id="elementor-tab-content-1762"
+                        class="eael-accordion-content clearfix"
+                        data-tab="2"
+                        aria-labelledby="payment-"
+                      >
+                        <p>
+                          <span class="selectable-text copyable-text"
+                            >Payment करने के बाद आपको WhatsApp पर एक Google
+                            Drive Link भेजा जाएगा, जहां से आप सारे वीडियो
+                            डाउनलोड कर सकते हो।</span
+                          >
+                        </p>
+                      </div>
+                    </div>
+                    <div class="eael-accordion-list">
+                      <div
+                        id="-"
+                        class="elementor-tab-title eael-accordion-header"
+                        tabindex="0"
+                        data-tab="3"
+                        aria-controls="elementor-tab-content-1763"
+                      >
+                        <span class="eael-advanced-accordion-icon-closed"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-plus"
+                          ></i></span
+                        ><span class="eael-advanced-accordion-icon-opened"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-minus"
+                          ></i></span
+                        ><span class="eael-accordion-tab-title"
+                          >यह वीडियो हमारे पास कब तक रहेगी?</span
+                        ><i
+                          aria-hidden="true"
+                          class="fa-toggle fas fa-angle-right"
+                        ></i>
+                      </div>
+                      <div
+                        id="elementor-tab-content-1763"
+                        class="eael-accordion-content clearfix"
+                        data-tab="3"
+                        aria-labelledby="-"
+                      >
+                        <p>
+                          आपको सारी हिंदी कार्टून वीडियो Lifetime Access के साथ
+                          मिलेगी।
+                        </p>
+                      </div>
+                    </div>
+                    <div class="eael-accordion-list">
+                      <div
+                        id="-youtube-channel-monetize-"
+                        class="elementor-tab-title eael-accordion-header"
+                        tabindex="0"
+                        data-tab="4"
+                        aria-controls="elementor-tab-content-1764"
+                      >
+                        <span class="eael-advanced-accordion-icon-closed"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-plus"
+                          ></i></span
+                        ><span class="eael-advanced-accordion-icon-opened"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-minus"
+                          ></i></span
+                        ><span class="eael-accordion-tab-title"
+                          >क्या इन वीडियो से हमारा YouTube Channel Monetize
+                          होगा?</span
+                        ><i
+                          aria-hidden="true"
+                          class="fa-toggle fas fa-angle-right"
+                        ></i>
+                      </div>
+                      <div
+                        id="elementor-tab-content-1764"
+                        class="eael-accordion-content clearfix"
+                        data-tab="4"
+                        aria-labelledby="-youtube-channel-monetize-"
+                      >
+                        <p>
+                          <span class="selectable-text copyable-text"
+                            >आप इन Cartoon Hindi Story Videos को अपलोड करके अपना
+                            चैनल Grow कर सकते हो और Monetize भी कर सकते हो आसानी
+                            से।</span
+                          >
+                        </p>
+                      </div>
+                    </div>
+                    <div class="eael-accordion-list">
+                      <div
+                        id="got-more-questions"
+                        class="elementor-tab-title eael-accordion-header"
+                        tabindex="0"
+                        data-tab="5"
+                        aria-controls="elementor-tab-content-1765"
+                      >
+                        <span class="eael-advanced-accordion-icon-closed"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-plus"
+                          ></i></span
+                        ><span class="eael-advanced-accordion-icon-opened"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-minus"
+                          ></i></span
+                        ><span class="eael-accordion-tab-title"
+                          >Got more questions?</span
+                        ><i
+                          aria-hidden="true"
+                          class="fa-toggle fas fa-angle-right"
+                        ></i>
+                      </div>
+                      <div
+                        id="elementor-tab-content-1765"
+                        class="eael-accordion-content clearfix"
+                        data-tab="5"
+                        aria-labelledby="got-more-questions"
+                      >
+                        <p>
+                          Please Email us at
+                          cartoonhindibundle@gmail.com&nbsp;for more
+                          questions<br /><br />Or Call Us At +91 8824858322
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="elementor-section elementor-top-section elementor-element elementor-element-30a5e25 elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+        data-id="30a5e25"
+        data-element_type="section"
+        data-settings='{"background_background":"classic"}'
+      >
+        <div class="elementor-container elementor-column-gap-default">
+          <div
+            class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5eeb63c7"
+            data-id="5eeb63c7"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-d189325 elementor-widget elementor-widget-text-editor"
+                data-id="d189325"
+                data-element_type="widget"
+                data-widget_type="text-editor.default"
+              >
+                <div class="elementor-widget-container">
+                  <span style="color: #000000"
+                    ><a
+                      style="color: #ffffff"
+                      href="https://learnskillstoday.com/terms-of-use/"
+                      >Terms of Service</a
+                    >
+                    |
+                    <a
+                      style="color: #ffffff"
+                      href="https://learnskillstoday.com/privacy-policy/"
+                      >Privacy Policy</a
+                    >
+                    |
+                    <a
+                      style="color: #ffffff"
+                      href="https://learnskillstoday.com/disclaimer/"
+                      >Disclaimer
+                    </a></span
+                  >
+                  |
+                  <a
+                    style="color: #ffffff"
+                    href="https://learnskillstoday.com/contact-us/"
+                    >Contact Us</a
+                  >
+                  |
+                  <a
+                    style="color: #ffffff"
+                    href="https://learnskillstoday.com/about-us/"
+                    >About Us</a
+                  >
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-1c48894f elementor-widget elementor-widget-text-editor"
+                data-id="1c48894f"
+                data-element_type="widget"
+                data-widget_type="text-editor.default"
+              >
+                <div class="elementor-widget-container">
+                  Copyright 2023 – Learn Skills Today – All Rights Reserved
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-776cff41 elementor-widget__width-initial elementor-widget elementor-widget-text-editor"
+                data-id="776cff41"
+                data-element_type="widget"
+                data-widget_type="text-editor.default"
+              >
+                <div class="elementor-widget-container">
+                  This Site Is Not A Part Of The Facebook™ Website Or Facebook™
+                  Inc. Additionally, This Site Is NOT Endorsed By Facebook™ In
+                  Any Way. FACEBOOK™ Is A Trademark Of FACEBOOK™, Inc.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="elementor-section elementor-top-section elementor-element elementor-element-d4e7355 elementor-hidden-desktop elementor-hidden-tablet elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+        data-id="d4e7355"
+        data-element_type="section"
+      >
+        <div class="elementor-container elementor-column-gap-default">
+          <div
+            class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6785730 elementor-hidden-desktop elementor-hidden-tablet"
+            data-id="6785730"
+            data-element_type="column"
+            data-settings='{"background_background":"classic"}'
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-8b3f4d5 elementor-widget elementor-widget-text-editor"
+                data-id="8b3f4d5"
+                data-element_type="widget"
+                data-widget_type="text-editor.default"
+              >
+                <div class="elementor-widget-container">
+                  आप भी YouTube पर Cartoon Videos अपलोड करके महीने का
+                  <span class="color">1-2 लाख कमा सकते हो</span> 🤑
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-5b1982f elementor-widget elementor-widget-text-editor"
+                data-id="5b1982f"
+                data-element_type="widget"
+                data-widget_type="text-editor.default"
+              >
+                <div class="elementor-widget-container">
+                  आपको Bundle में मिलेंगे 2,000+ Hindi Cartoon Stories Video
+                  <span class="color3">(100% COPYRIGHT FREE)</span>
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-c455940 elementor-widget elementor-widget-video"
+                data-id="c455940"
+                data-element_type="widget"
+                data-settings='{"video_type":"vimeo"}'
+                data-widget_type="video.default"
+              >
+                <div class="elementor-widget-container">
+                  <div class="elementor-wrapper elementor-open-inline">
+                    <iframe
+                      class="elementor-video-iframe"
+                      allowfullscreen=""
+                      allow="clipboard-write"
+                      title="vimeo Video Player"
+                      src="https://player.vimeo.com/video/883009618?color&amp;autopause=0&amp;loop=0&amp;muted=0&amp;title=1&amp;portrait=1&amp;byline=1#t="
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-377e8f43 elementor-widget elementor-widget-eael-creative-button"
+                data-id="377e8f43"
+                data-element_type="widget"
+                data-widget_type="eael-creative-button.default"
+              >
+                <div class="elementor-widget-container">
+                  <div class="eael-creative-button-wrapper">
+                    <a
+                      class="eael-creative-button eael-creative-button--default"
+                      href="https://rzp.io/l/n5XUeTmGip"
+                      data-text="Go!"
+                    >
+                      <div class="creative-button-inner">
+                        <span class="cretive-button-text"
+                          >👉🏾 JOIN करे सिर्फ <s>₹497</s> Rs ₹197 👈🏾 <br />
+                          <sub>Limited Time Offer (Ending Soon)</sub></span
+                        >
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-1447d7eb elementor-icon-list--layout-inline elementor-mobile-align-left elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                data-id="1447d7eb"
+                data-element_type="widget"
+                data-widget_type="icon-list.default"
+              >
+                <div class="elementor-widget-container">
+                  <ul class="elementor-icon-list-items elementor-inline-items">
+                    <li class="elementor-icon-list-item elementor-inline-item">
+                      <span class="elementor-icon-list-icon">
+                        <i aria-hidden="true" class="fas fa-check"></i>
+                      </span>
+                      <span class="elementor-icon-list-text"
+                        >2,000+ Hindi Cartoon Stories</span
+                      >
+                    </li>
+                    <li class="elementor-icon-list-item elementor-inline-item">
+                      <span class="elementor-icon-list-icon">
+                        <i aria-hidden="true" class="fas fa-check"></i>
+                      </span>
+                      <span class="elementor-icon-list-text"
+                        >Attractive Thumbnails</span
+                      >
+                    </li>
+                    <li class="elementor-icon-list-item elementor-inline-item">
+                      <span class="elementor-icon-list-icon">
+                        <i aria-hidden="true" class="fas fa-check"></i>
+                      </span>
+                      <span class="elementor-icon-list-text"
+                        >SEO Description &amp; Tags</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-893aede elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+                data-id="893aede"
+                data-element_type="widget"
+                data-widget_type="divider.default"
+              >
+                <div class="elementor-widget-container">
+                  <style>
+                    /*! elementor - v3.19.0 - 26-02-2024 */
+                    .elementor-widget-divider {
+                      --divider-border-style: none;
+                      --divider-border-width: 1px;
+                      --divider-color: #0c0d0e;
+                      --divider-icon-size: 20px;
+                      --divider-element-spacing: 10px;
+                      --divider-pattern-height: 24px;
+                      --divider-pattern-size: 20px;
+                      --divider-pattern-url: none;
+                      --divider-pattern-repeat: repeat-x;
+                    }
+                    .elementor-widget-divider .elementor-divider {
+                      display: flex;
+                    }
+                    .elementor-widget-divider .elementor-divider__text {
+                      font-size: 15px;
+                      line-height: 1;
+                      max-width: 95%;
+                    }
+                    .elementor-widget-divider .elementor-divider__element {
+                      margin: 0 var(--divider-element-spacing);
+                      flex-shrink: 0;
+                    }
+                    .elementor-widget-divider .elementor-icon {
+                      font-size: var(--divider-icon-size);
+                    }
+                    .elementor-widget-divider .elementor-divider-separator {
+                      display: flex;
+                      margin: 0;
+                      direction: ltr;
+                    }
+                    .elementor-widget-divider--view-line_icon
+                      .elementor-divider-separator,
+                    .elementor-widget-divider--view-line_text
+                      .elementor-divider-separator {
+                      align-items: center;
+                    }
+                    .elementor-widget-divider--view-line_icon
+                      .elementor-divider-separator:after,
+                    .elementor-widget-divider--view-line_icon
+                      .elementor-divider-separator:before,
+                    .elementor-widget-divider--view-line_text
+                      .elementor-divider-separator:after,
+                    .elementor-widget-divider--view-line_text
+                      .elementor-divider-separator:before {
+                      display: block;
+                      content: "";
+                      border-block-end: 0;
+                      flex-grow: 1;
+                      border-block-start: var(--divider-border-width)
+                        var(--divider-border-style) var(--divider-color);
+                    }
+                    .elementor-widget-divider--element-align-left
+                      .elementor-divider
+                      .elementor-divider-separator
+                      > .elementor-divider__svg:first-of-type {
+                      flex-grow: 0;
+                      flex-shrink: 100;
+                    }
+                    .elementor-widget-divider--element-align-left
+                      .elementor-divider-separator:before {
+                      content: none;
+                    }
+                    .elementor-widget-divider--element-align-left
+                      .elementor-divider__element {
+                      margin-left: 0;
+                    }
+                    .elementor-widget-divider--element-align-right
+                      .elementor-divider
+                      .elementor-divider-separator
+                      > .elementor-divider__svg:last-of-type {
+                      flex-grow: 0;
+                      flex-shrink: 100;
+                    }
+                    .elementor-widget-divider--element-align-right
+                      .elementor-divider-separator:after {
+                      content: none;
+                    }
+                    .elementor-widget-divider--element-align-right
+                      .elementor-divider__element {
+                      margin-right: 0;
+                    }
+                    .elementor-widget-divider--element-align-start
+                      .elementor-divider
+                      .elementor-divider-separator
+                      > .elementor-divider__svg:first-of-type {
+                      flex-grow: 0;
+                      flex-shrink: 100;
+                    }
+                    .elementor-widget-divider--element-align-start
+                      .elementor-divider-separator:before {
+                      content: none;
+                    }
+                    .elementor-widget-divider--element-align-start
+                      .elementor-divider__element {
+                      margin-inline-start: 0;
+                    }
+                    .elementor-widget-divider--element-align-end
+                      .elementor-divider
+                      .elementor-divider-separator
+                      > .elementor-divider__svg:last-of-type {
+                      flex-grow: 0;
+                      flex-shrink: 100;
+                    }
+                    .elementor-widget-divider--element-align-end
+                      .elementor-divider-separator:after {
+                      content: none;
+                    }
+                    .elementor-widget-divider--element-align-end
+                      .elementor-divider__element {
+                      margin-inline-end: 0;
+                    }
+                    .elementor-widget-divider:not(
+                        .elementor-widget-divider--view-line_text
+                      ):not(.elementor-widget-divider--view-line_icon)
+                      .elementor-divider-separator {
+                      border-block-start: var(--divider-border-width)
+                        var(--divider-border-style) var(--divider-color);
+                    }
+                    .elementor-widget-divider--separator-type-pattern {
+                      --divider-border-style: none;
+                    }
+                    .elementor-widget-divider--separator-type-pattern.elementor-widget-divider--view-line
+                      .elementor-divider-separator,
+                    .elementor-widget-divider--separator-type-pattern:not(
+                        .elementor-widget-divider--view-line
+                      )
+                      .elementor-divider-separator:after,
+                    .elementor-widget-divider--separator-type-pattern:not(
+                        .elementor-widget-divider--view-line
+                      )
+                      .elementor-divider-separator:before,
+                    .elementor-widget-divider--separator-type-pattern:not(
+                        [class*="elementor-widget-divider--view"]
+                      )
+                      .elementor-divider-separator {
+                      width: 100%;
+                      min-height: var(--divider-pattern-height);
+                      -webkit-mask-size: var(--divider-pattern-size) 100%;
+                      mask-size: var(--divider-pattern-size) 100%;
+                      -webkit-mask-repeat: var(--divider-pattern-repeat);
+                      mask-repeat: var(--divider-pattern-repeat);
+                      background-color: var(--divider-color);
+                      -webkit-mask-image: var(--divider-pattern-url);
+                      mask-image: var(--divider-pattern-url);
+                    }
+                    .elementor-widget-divider--no-spacing {
+                      --divider-pattern-size: auto;
+                    }
+                    .elementor-widget-divider--bg-round {
+                      --divider-pattern-repeat: round;
+                    }
+                    .rtl .elementor-widget-divider .elementor-divider__text {
+                      direction: rtl;
+                    }
+                    .e-con-inner > .elementor-widget-divider,
+                    .e-con > .elementor-widget-divider {
+                      width: var(--container-widget-width, 100%);
+                      --flex-grow: var(--container-widget-flex-grow);
+                    }
+                  </style>
+                  <div class="elementor-divider">
+                    <span class="elementor-divider-separator"> </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-56b05b2 elementor-widget elementor-widget-text-editor"
+                data-id="56b05b2"
+                data-element_type="widget"
+                data-widget_type="text-editor.default"
+              >
+                <div class="elementor-widget-container">
+                  BUNDEL के SAMPLE वीडियो
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-eadb912 elementor-widget elementor-widget-video"
+                data-id="eadb912"
+                data-element_type="widget"
+                data-settings='{"video_type":"vimeo"}'
+                data-widget_type="video.default"
+              >
+                <div class="elementor-widget-container">
+                  <div class="elementor-wrapper elementor-open-inline">
+                    <iframe
+                      class="elementor-video-iframe"
+                      allowfullscreen=""
+                      allow="clipboard-write"
+                      title="vimeo Video Player"
+                      src="https://player.vimeo.com/video/884123929?color&amp;autopause=0&amp;loop=0&amp;muted=0&amp;title=1&amp;portrait=1&amp;byline=1#t="
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-cb25b79 elementor-widget elementor-widget-video"
+                data-id="cb25b79"
+                data-element_type="widget"
+                data-settings='{"video_type":"vimeo"}'
+                data-widget_type="video.default"
+              >
+                <div class="elementor-widget-container">
+                  <div class="elementor-wrapper elementor-open-inline">
+                    <iframe
+                      class="elementor-video-iframe"
+                      allowfullscreen=""
+                      allow="clipboard-write"
+                      title="vimeo Video Player"
+                      src="https://player.vimeo.com/video/884122993?color&amp;autopause=0&amp;loop=0&amp;muted=0&amp;title=1&amp;portrait=1&amp;byline=1#t="
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-5242a03 elementor-widget elementor-widget-video"
+                data-id="5242a03"
+                data-element_type="widget"
+                data-settings='{"video_type":"vimeo"}'
+                data-widget_type="video.default"
+              >
+                <div class="elementor-widget-container">
+                  <div class="elementor-wrapper elementor-open-inline">
+                    <iframe
+                      class="elementor-video-iframe"
+                      allowfullscreen=""
+                      allow="clipboard-write"
+                      title="vimeo Video Player"
+                      src="https://player.vimeo.com/video/884123398?color&amp;autopause=0&amp;loop=0&amp;muted=0&amp;title=1&amp;portrait=1&amp;byline=1#t="
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-207553c elementor-widget elementor-widget-video"
+                data-id="207553c"
+                data-element_type="widget"
+                data-settings='{"video_type":"vimeo"}'
+                data-widget_type="video.default"
+              >
+                <div class="elementor-widget-container">
+                  <div class="elementor-wrapper elementor-open-inline">
+                    <iframe
+                      class="elementor-video-iframe"
+                      allowfullscreen=""
+                      allow="clipboard-write"
+                      title="vimeo Video Player"
+                      src="https://player.vimeo.com/video/884124741?color&amp;autopause=0&amp;loop=0&amp;muted=0&amp;title=1&amp;portrait=1&amp;byline=1#t="
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-0709438 elementor-widget elementor-widget-eael-creative-button"
+                data-id="0709438"
+                data-element_type="widget"
+                data-widget_type="eael-creative-button.default"
+              >
+                <div class="elementor-widget-container">
+                  <div class="eael-creative-button-wrapper">
+                    <a
+                      class="eael-creative-button eael-creative-button--default"
+                      href="https://rzp.io/l/n5XUeTmGip"
+                      data-text="Go!"
+                    >
+                      <div class="creative-button-inner">
+                        <span class="cretive-button-text"
+                          >👉🏾 JOIN करे सिर्फ <s>₹497</s> Rs ₹197 👈🏾 <br />
+                          <sub>Limited Time Offer (Ending Soon)</sub></span
+                        >
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="elementor-section elementor-top-section elementor-element elementor-element-9d654ae elementor-hidden-desktop elementor-hidden-tablet elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+        data-id="9d654ae"
+        data-element_type="section"
+        data-settings='{"background_background":"classic"}'
+      >
+        <div class="elementor-container elementor-column-gap-default">
+          <div
+            class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-22053472 elementor-hidden-desktop elementor-hidden-tablet"
+            data-id="22053472"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-bea2747 elementor-widget elementor-widget-text-editor"
+                data-id="bea2747"
+                data-element_type="widget"
+                data-widget_type="text-editor.default"
+              >
+                <div class="elementor-widget-container">STUDENTS का अनुभव</div>
+              </div>
+              <div
+                class="elementor-element elementor-element-7c6bec93 elementor-widget elementor-widget-image"
+                data-id="7c6bec93"
+                data-element_type="widget"
+                data-widget_type="image.default"
+              >
+                <div class="elementor-widget-container">
+                  <img
+                    fetchpriority="high"
+                    decoding="async"
+                    width="511"
+                    height="1024"
+                    src="https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2023-18-10-05-27-4-511x1024.png"
+                    class="attachment-large size-large wp-image-915"
+                    alt=""
+                    srcset="
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2023-18-10-05-27-4-511x1024.png 511w,
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2023-18-10-05-27-4-150x300.png  150w,
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2023-18-10-05-27-4.png          600w
+                    "
+                    sizes="(max-width: 511px) 100vw, 511px"
+                    style="width: 100%; height: 200.33%; max-width: 600px"
+                  />
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-17054f5f elementor-widget elementor-widget-image"
+                data-id="17054f5f"
+                data-element_type="widget"
+                data-widget_type="image.default"
+              >
+                <div class="elementor-widget-container">
+                  <img
+                    decoding="async"
+                    width="393"
+                    height="1024"
+                    src="https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2-2023-18-10-05-28-28-393x1024.png"
+                    class="attachment-large size-large wp-image-916"
+                    alt=""
+                    srcset="
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2-2023-18-10-05-28-28-393x1024.png 393w,
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2-2023-18-10-05-28-28-115x300.png  115w,
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2-2023-18-10-05-28-28-590x1536.png 590w,
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/whatsapp_chat-2-2023-18-10-05-28-28.png          600w
+                    "
+                    sizes="(max-width: 393px) 100vw, 393px"
+                    style="width: 100%; height: 260.5%; max-width: 600px"
+                  />
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-78061c59 elementor-widget elementor-widget-image"
+                data-id="78061c59"
+                data-element_type="widget"
+                data-widget_type="image.default"
+              >
+                <div class="elementor-widget-container">
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    width="539"
+                    height="1024"
+                    src="https://learnskillstoday.com/wp-content/uploads/2023/11/facebook_messenger_chat-2023-18-10-05-28-3-539x1024.png"
+                    class="attachment-large size-large wp-image-917"
+                    alt=""
+                    srcset="
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/facebook_messenger_chat-2023-18-10-05-28-3-539x1024.png 539w,
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/facebook_messenger_chat-2023-18-10-05-28-3-158x300.png  158w,
+                      https://learnskillstoday.com/wp-content/uploads/2023/11/facebook_messenger_chat-2023-18-10-05-28-3.png          600w
+                    "
+                    sizes="(max-width: 539px) 100vw, 539px"
+                    style="width: 100%; height: 190%; max-width: 600px"
+                  />
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-853b7ee elementor-widget elementor-widget-eael-creative-button"
+                data-id="853b7ee"
+                data-element_type="widget"
+                data-widget_type="eael-creative-button.default"
+              >
+                <div class="elementor-widget-container">
+                  <div class="eael-creative-button-wrapper">
+                    <a
+                      class="eael-creative-button eael-creative-button--default"
+                      href="https://rzp.io/l/n5XUeTmGip"
+                      data-text="Go!"
+                    >
+                      <div class="creative-button-inner">
+                        <span class="cretive-button-text"
+                          >👉🏾 JOIN करे सिर्फ <s>₹497</s> Rs ₹197 👈🏾 <br />
+                          <sub>Limited Time Offer (Ending Soon)</sub></span
+                        >
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="elementor-section elementor-top-section elementor-element elementor-element-21f1660 elementor-hidden-desktop elementor-hidden-tablet elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+        data-id="21f1660"
+        data-element_type="section"
+        data-settings='{"background_background":"classic"}'
+      >
+        <div class="elementor-container elementor-column-gap-default">
+          <div
+            class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3d413f5"
+            data-id="3d413f5"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-29e8de8d elementor-widget elementor-widget-text-editor"
+                data-id="29e8de8d"
+                data-element_type="widget"
+                data-widget_type="text-editor.default"
+              >
+                <div class="elementor-widget-container">
+                  अक्सर पूछे जाने वाले सवाल
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-671b3670 elementor-widget elementor-widget-eael-adv-accordion"
+                data-id="671b3670"
+                data-element_type="widget"
+                data-widget_type="eael-adv-accordion.default"
+              >
+                <div class="elementor-widget-container">
+                  <div
+                    class="eael-adv-accordion"
+                    id="eael-adv-accordion-671b3670"
+                    data-scroll-on-click="no"
+                    data-scroll-speed="300"
+                    data-accordion-id="671b3670"
+                    data-accordion-type="accordion"
+                    data-toogle-speed="300"
+                  >
+                    <div class="eael-accordion-list">
+                      <div
+                        id="-youtube-"
+                        class="elementor-tab-title eael-accordion-header"
+                        tabindex="0"
+                        data-tab="1"
+                        aria-controls="elementor-tab-content-1721"
+                      >
+                        <span class="eael-advanced-accordion-icon-closed"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-plus"
+                          ></i></span
+                        ><span class="eael-advanced-accordion-icon-opened"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-minus"
+                          ></i></span
+                        ><span class="eael-accordion-tab-title">
+                          क्या हम इन वीडियो को अपने YouTube चैनल पर अपलोड कर
+                          सकते हैं?</span
+                        ><i
+                          aria-hidden="true"
+                          class="fa-toggle fas fa-angle-right"
+                        ></i>
+                      </div>
+                      <div
+                        id="elementor-tab-content-1721"
+                        class="eael-accordion-content clearfix"
+                        data-tab="1"
+                        aria-labelledby="-youtube-"
+                      >
+                        <p>
+                          जी बिल्कुल आप इन वीडियो को अपने YouTube चैनल पर अपलोड
+                          कर सकते हो। आपको कोई भी Copyright आएगी।
+                        </p>
+                      </div>
+                    </div>
+                    <div class="eael-accordion-list">
+                      <div
+                        id="payment-"
+                        class="elementor-tab-title eael-accordion-header"
+                        tabindex="0"
+                        data-tab="2"
+                        aria-controls="elementor-tab-content-1722"
+                      >
+                        <span class="eael-advanced-accordion-icon-closed"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-plus"
+                          ></i></span
+                        ><span class="eael-advanced-accordion-icon-opened"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-minus"
+                          ></i></span
+                        ><span class="eael-accordion-tab-title"
+                          >Payment के बाद हमको वीडियो कैसे मिलेगी?</span
+                        ><i
+                          aria-hidden="true"
+                          class="fa-toggle fas fa-angle-right"
+                        ></i>
+                      </div>
+                      <div
+                        id="elementor-tab-content-1722"
+                        class="eael-accordion-content clearfix"
+                        data-tab="2"
+                        aria-labelledby="payment-"
+                      >
+                        <p>
+                          Payment करने के बाद आपको WhatsApp पर एक Google Drive
+                          Link भेजा जाएगा, जहां से आप सारे वीडियो डाउनलोड कर
+                          सकते हो।
+                        </p>
+                      </div>
+                    </div>
+                    <div class="eael-accordion-list">
+                      <div
+                        id="-"
+                        class="elementor-tab-title eael-accordion-header"
+                        tabindex="0"
+                        data-tab="3"
+                        aria-controls="elementor-tab-content-1723"
+                      >
+                        <span class="eael-advanced-accordion-icon-closed"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-plus"
+                          ></i></span
+                        ><span class="eael-advanced-accordion-icon-opened"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-minus"
+                          ></i></span
+                        ><span class="eael-accordion-tab-title"
+                          >यह वीडियो हमारे पास कब तक रहेगी?</span
+                        ><i
+                          aria-hidden="true"
+                          class="fa-toggle fas fa-angle-right"
+                        ></i>
+                      </div>
+                      <div
+                        id="elementor-tab-content-1723"
+                        class="eael-accordion-content clearfix"
+                        data-tab="3"
+                        aria-labelledby="-"
+                      >
+                        <p>
+                          आपको सारी हिंदी कार्टून वीडियो Lifetime Access के साथ
+                          मिलेगी।
+                        </p>
+                      </div>
+                    </div>
+                    <div class="eael-accordion-list">
+                      <div
+                        id="-youtube-channel-monetize-"
+                        class="elementor-tab-title eael-accordion-header"
+                        tabindex="0"
+                        data-tab="4"
+                        aria-controls="elementor-tab-content-1724"
+                      >
+                        <span class="eael-advanced-accordion-icon-closed"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-plus"
+                          ></i></span
+                        ><span class="eael-advanced-accordion-icon-opened"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-minus"
+                          ></i></span
+                        ><span class="eael-accordion-tab-title"
+                          >क्या इन वीडियो से हमारा YouTube Channel Monetize
+                          होगा?</span
+                        ><i
+                          aria-hidden="true"
+                          class="fa-toggle fas fa-angle-right"
+                        ></i>
+                      </div>
+                      <div
+                        id="elementor-tab-content-1724"
+                        class="eael-accordion-content clearfix"
+                        data-tab="4"
+                        aria-labelledby="-youtube-channel-monetize-"
+                      >
+                        <p>
+                          आप इन Cartoon Hindi Story Videos को अपलोड करके अपना
+                          चैनल Grow कर सकते हो और Monetize भी कर सकते हो आसानी
+                          से।
+                        </p>
+                      </div>
+                    </div>
+                    <div class="eael-accordion-list">
+                      <div
+                        id="more-questions"
+                        class="elementor-tab-title eael-accordion-header"
+                        tabindex="0"
+                        data-tab="5"
+                        aria-controls="elementor-tab-content-1725"
+                      >
+                        <span class="eael-advanced-accordion-icon-closed"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-plus"
+                          ></i></span
+                        ><span class="eael-advanced-accordion-icon-opened"
+                          ><i
+                            aria-hidden="true"
+                            class="fa-accordion-icon fas fa-minus"
+                          ></i></span
+                        ><span class="eael-accordion-tab-title"
+                          >More Questions?</span
+                        ><i
+                          aria-hidden="true"
+                          class="fa-toggle fas fa-angle-right"
+                        ></i>
+                      </div>
+                      <div
+                        id="elementor-tab-content-1725"
+                        class="eael-accordion-content clearfix"
+                        data-tab="5"
+                        aria-labelledby="more-questions"
+                      >
+                        <p>
+                          Please Email us at
+                          cartoonhindibundle@gmail.com&nbsp;for more
+                          questions<br /><br />Or Call Us At +918824858322
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="elementor-section elementor-top-section elementor-element elementor-element-53d1094 elementor-hidden-desktop elementor-hidden-tablet elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+        data-id="53d1094"
+        data-element_type="section"
+        data-settings='{"background_background":"classic"}'
+      >
+        <div class="elementor-container elementor-column-gap-default">
+          <div
+            class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7559149e"
+            data-id="7559149e"
+            data-element_type="column"
+          >
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div
+                class="elementor-element elementor-element-cffa1e8 elementor-widget elementor-widget-text-editor"
+                data-id="cffa1e8"
+                data-element_type="widget"
+                data-widget_type="text-editor.default"
+              >
+                <div class="elementor-widget-container">
+                  <span style="color: #7a7a7a"
+                    ><a
+                      style="color: #7a7a7a"
+                      href="https://learnskillstoday.com/terms-of-use/"
+                      >Terms of Service</a
+                    >
+                    |
+                    <a
+                      style="color: #7a7a7a"
+                      href="https://learnskillstoday.com/privacy-policy/"
+                      >Privacy Policy</a
+                    >
+                    |
+                    <a
+                      style="color: #7a7a7a"
+                      href="https://learnskillstoday.com/disclaimer/"
+                      >Disclaimer
+                    </a></span
+                  >
+                  |
+                  <a
+                    style="color: #7a7a7a"
+                    href="https://learnskillstoday.com/contact-us/"
+                    >Contact Us</a
+                  >
+                  |
+                  <a
+                    style="color: #7a7a7a"
+                    href="https://learnskillstoday.com/about-us/"
+                    >About Us</a
+                  >
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-2adb4fe1 elementor-widget elementor-widget-text-editor"
+                data-id="2adb4fe1"
+                data-element_type="widget"
+                data-widget_type="text-editor.default"
+              >
+                <div class="elementor-widget-container">
+                  Copyright 2023 – Learn Skills Today – All Rights Reserved
+                </div>
+              </div>
+              <div
+                class="elementor-element elementor-element-3631afb6 elementor-widget elementor-widget-text-editor"
+                data-id="3631afb6"
+                data-element_type="widget"
+                data-widget_type="text-editor.default"
+              >
+                <div class="elementor-widget-container">
+                  This Site Is Not A Part Of The Facebook™ Website Or Facebook™
+                  Inc. Additionally, This Site Is NOT Endorsed By Facebook™ In
+                  Any Way. FACEBOOK™ Is A Trademark Of FACEBOOK™, Inc.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      document.body.classList.remove("no-js");
+    </script>
+    <script
+      src="data:text/javascript;base64,CglpZiAoIC0xICE9PSBuYXZpZ2F0b3IudXNlckFnZW50LmluZGV4T2YoICdNU0lFJyApIHx8IC0xICE9PSBuYXZpZ2F0b3IuYXBwVmVyc2lvbi5pbmRleE9mKCAnVHJpZGVudC8nICkgKSB7CgkJZG9jdW1lbnQuYm9keS5jbGFzc0xpc3QuYWRkKCAnaXMtSUUnICk7Cgl9Cgk="
+      data-rocket-status="executed"
+    >
+      if ( -1 !== navigator.userAgent.indexOf( 'MSIE' ) || -1 !== navigator.appVersion.indexOf( 'Trident/' ) ) {
+          document.body.classList.add( 'is-IE' );
+      }
+    </script>
+
+    <script
+      id="rocket-browser-checker-js-after"
+      src="data:text/javascript;base64,CiJ1c2Ugc3RyaWN0Ijt2YXIgX2NyZWF0ZUNsYXNzPWZ1bmN0aW9uKCl7ZnVuY3Rpb24gZGVmaW5lUHJvcGVydGllcyh0YXJnZXQscHJvcHMpe2Zvcih2YXIgaT0wO2k8cHJvcHMubGVuZ3RoO2krKyl7dmFyIGRlc2NyaXB0b3I9cHJvcHNbaV07ZGVzY3JpcHRvci5lbnVtZXJhYmxlPWRlc2NyaXB0b3IuZW51bWVyYWJsZXx8ITEsZGVzY3JpcHRvci5jb25maWd1cmFibGU9ITAsInZhbHVlImluIGRlc2NyaXB0b3ImJihkZXNjcmlwdG9yLndyaXRhYmxlPSEwKSxPYmplY3QuZGVmaW5lUHJvcGVydHkodGFyZ2V0LGRlc2NyaXB0b3Iua2V5LGRlc2NyaXB0b3IpfX1yZXR1cm4gZnVuY3Rpb24oQ29uc3RydWN0b3IscHJvdG9Qcm9wcyxzdGF0aWNQcm9wcyl7cmV0dXJuIHByb3RvUHJvcHMmJmRlZmluZVByb3BlcnRpZXMoQ29uc3RydWN0b3IucHJvdG90eXBlLHByb3RvUHJvcHMpLHN0YXRpY1Byb3BzJiZkZWZpbmVQcm9wZXJ0aWVzKENvbnN0cnVjdG9yLHN0YXRpY1Byb3BzKSxDb25zdHJ1Y3Rvcn19KCk7ZnVuY3Rpb24gX2NsYXNzQ2FsbENoZWNrKGluc3RhbmNlLENvbnN0cnVjdG9yKXtpZighKGluc3RhbmNlIGluc3RhbmNlb2YgQ29uc3RydWN0b3IpKXRocm93IG5ldyBUeXBlRXJyb3IoIkNhbm5vdCBjYWxsIGEgY2xhc3MgYXMgYSBmdW5jdGlvbiIpfXZhciBSb2NrZXRCcm93c2VyQ29tcGF0aWJpbGl0eUNoZWNrZXI9ZnVuY3Rpb24oKXtmdW5jdGlvbiBSb2NrZXRCcm93c2VyQ29tcGF0aWJpbGl0eUNoZWNrZXIob3B0aW9ucyl7X2NsYXNzQ2FsbENoZWNrKHRoaXMsUm9ja2V0QnJvd3NlckNvbXBhdGliaWxpdHlDaGVja2VyKSx0aGlzLnBhc3NpdmVTdXBwb3J0ZWQ9ITEsdGhpcy5fY2hlY2tQYXNzaXZlT3B0aW9uKHRoaXMpLHRoaXMub3B0aW9ucz0hIXRoaXMucGFzc2l2ZVN1cHBvcnRlZCYmb3B0aW9uc31yZXR1cm4gX2NyZWF0ZUNsYXNzKFJvY2tldEJyb3dzZXJDb21wYXRpYmlsaXR5Q2hlY2tlcixbe2tleToiX2NoZWNrUGFzc2l2ZU9wdGlvbiIsdmFsdWU6ZnVuY3Rpb24oc2VsZil7dHJ5e3ZhciBvcHRpb25zPXtnZXQgcGFzc2l2ZSgpe3JldHVybiEoc2VsZi5wYXNzaXZlU3VwcG9ydGVkPSEwKX19O3dpbmRvdy5hZGRFdmVudExpc3RlbmVyKCJ0ZXN0IixudWxsLG9wdGlvbnMpLHdpbmRvdy5yZW1vdmVFdmVudExpc3RlbmVyKCJ0ZXN0IixudWxsLG9wdGlvbnMpfWNhdGNoKGVycil7c2VsZi5wYXNzaXZlU3VwcG9ydGVkPSExfX19LHtrZXk6ImluaXRSZXF1ZXN0SWRsZUNhbGxiYWNrIix2YWx1ZTpmdW5jdGlvbigpeyExIGluIHdpbmRvdyYmKHdpbmRvdy5yZXF1ZXN0SWRsZUNhbGxiYWNrPWZ1bmN0aW9uKGNiKXt2YXIgc3RhcnQ9RGF0ZS5ub3coKTtyZXR1cm4gc2V0VGltZW91dChmdW5jdGlvbigpe2NiKHtkaWRUaW1lb3V0OiExLHRpbWVSZW1haW5pbmc6ZnVuY3Rpb24oKXtyZXR1cm4gTWF0aC5tYXgoMCw1MC0oRGF0ZS5ub3coKS1zdGFydCkpfX0pfSwxKX0pLCExIGluIHdpbmRvdyYmKHdpbmRvdy5jYW5jZWxJZGxlQ2FsbGJhY2s9ZnVuY3Rpb24oaWQpe3JldHVybiBjbGVhclRpbWVvdXQoaWQpfSl9fSx7a2V5OiJpc0RhdGFTYXZlck1vZGVPbiIsdmFsdWU6ZnVuY3Rpb24oKXtyZXR1cm4iY29ubmVjdGlvbiJpbiBuYXZpZ2F0b3ImJiEwPT09bmF2aWdhdG9yLmNvbm5lY3Rpb24uc2F2ZURhdGF9fSx7a2V5OiJzdXBwb3J0c0xpbmtQcmVmZXRjaCIsdmFsdWU6ZnVuY3Rpb24oKXt2YXIgZWxlbT1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCJsaW5rIik7cmV0dXJuIGVsZW0ucmVsTGlzdCYmZWxlbS5yZWxMaXN0LnN1cHBvcnRzJiZlbGVtLnJlbExpc3Quc3VwcG9ydHMoInByZWZldGNoIikmJndpbmRvdy5JbnRlcnNlY3Rpb25PYnNlcnZlciYmImlzSW50ZXJzZWN0aW5nImluIEludGVyc2VjdGlvbk9ic2VydmVyRW50cnkucHJvdG90eXBlfX0se2tleToiaXNTbG93Q29ubmVjdGlvbiIsdmFsdWU6ZnVuY3Rpb24oKXtyZXR1cm4iY29ubmVjdGlvbiJpbiBuYXZpZ2F0b3ImJiJlZmZlY3RpdmVUeXBlImluIG5hdmlnYXRvci5jb25uZWN0aW9uJiYoIjJnIj09PW5hdmlnYXRvci5jb25uZWN0aW9uLmVmZmVjdGl2ZVR5cGV8fCJzbG93LTJnIj09PW5hdmlnYXRvci5jb25uZWN0aW9uLmVmZmVjdGl2ZVR5cGUpfX1dKSxSb2NrZXRCcm93c2VyQ29tcGF0aWJpbGl0eUNoZWNrZXJ9KCk7Cg=="
+      data-rocket-status="executed"
+    >
+      "use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+    </script>
+    <script id="rocket-preload-links-js-extra">
+      var RocketPreloadLinksConfig = {
+        excludeUris:
+          "\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/",
+        usesTrailingSlash: "1",
+        imageExt:
+          "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php",
+        fileExt:
+          "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm",
+        siteUrl: "https:\/\/learnskillstoday.com",
+        onHoverDelay: "100",
+        rateThrottle: "3",
+      };
+    </script>
+    <script
+      id="rocket-preload-links-js-after"
+      src="data:text/javascript;base64,CihmdW5jdGlvbigpIHsKInVzZSBzdHJpY3QiO3ZhciByPSJmdW5jdGlvbiI9PXR5cGVvZiBTeW1ib2wmJiJzeW1ib2wiPT10eXBlb2YgU3ltYm9sLml0ZXJhdG9yP2Z1bmN0aW9uKGUpe3JldHVybiB0eXBlb2YgZX06ZnVuY3Rpb24oZSl7cmV0dXJuIGUmJiJmdW5jdGlvbiI9PXR5cGVvZiBTeW1ib2wmJmUuY29uc3RydWN0b3I9PT1TeW1ib2wmJmUhPT1TeW1ib2wucHJvdG90eXBlPyJzeW1ib2wiOnR5cGVvZiBlfSxlPWZ1bmN0aW9uKCl7ZnVuY3Rpb24gaShlLHQpe2Zvcih2YXIgbj0wO248dC5sZW5ndGg7bisrKXt2YXIgaT10W25dO2kuZW51bWVyYWJsZT1pLmVudW1lcmFibGV8fCExLGkuY29uZmlndXJhYmxlPSEwLCJ2YWx1ZSJpbiBpJiYoaS53cml0YWJsZT0hMCksT2JqZWN0LmRlZmluZVByb3BlcnR5KGUsaS5rZXksaSl9fXJldHVybiBmdW5jdGlvbihlLHQsbil7cmV0dXJuIHQmJmkoZS5wcm90b3R5cGUsdCksbiYmaShlLG4pLGV9fSgpO2Z1bmN0aW9uIGkoZSx0KXtpZighKGUgaW5zdGFuY2VvZiB0KSl0aHJvdyBuZXcgVHlwZUVycm9yKCJDYW5ub3QgY2FsbCBhIGNsYXNzIGFzIGEgZnVuY3Rpb24iKX12YXIgdD1mdW5jdGlvbigpe2Z1bmN0aW9uIG4oZSx0KXtpKHRoaXMsbiksdGhpcy5icm93c2VyPWUsdGhpcy5jb25maWc9dCx0aGlzLm9wdGlvbnM9dGhpcy5icm93c2VyLm9wdGlvbnMsdGhpcy5wcmVmZXRjaGVkPW5ldyBTZXQsdGhpcy5ldmVudFRpbWU9bnVsbCx0aGlzLnRocmVzaG9sZD0xMTExLHRoaXMubnVtT25Ib3Zlcj0wfXJldHVybiBlKG4sW3trZXk6ImluaXQiLHZhbHVlOmZ1bmN0aW9uKCl7IXRoaXMuYnJvd3Nlci5zdXBwb3J0c0xpbmtQcmVmZXRjaCgpfHx0aGlzLmJyb3dzZXIuaXNEYXRhU2F2ZXJNb2RlT24oKXx8dGhpcy5icm93c2VyLmlzU2xvd0Nvbm5lY3Rpb24oKXx8KHRoaXMucmVnZXg9e2V4Y2x1ZGVVcmlzOlJlZ0V4cCh0aGlzLmNvbmZpZy5leGNsdWRlVXJpcywiaSIpLGltYWdlczpSZWdFeHAoIi4oIit0aGlzLmNvbmZpZy5pbWFnZUV4dCsiKSQiLCJpIiksZmlsZUV4dDpSZWdFeHAoIi4oIit0aGlzLmNvbmZpZy5maWxlRXh0KyIpJCIsImkiKX0sdGhpcy5faW5pdExpc3RlbmVycyh0aGlzKSl9fSx7a2V5OiJfaW5pdExpc3RlbmVycyIsdmFsdWU6ZnVuY3Rpb24oZSl7LTE8dGhpcy5jb25maWcub25Ib3ZlckRlbGF5JiZkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCJtb3VzZW92ZXIiLGUubGlzdGVuZXIuYmluZChlKSxlLmxpc3RlbmVyT3B0aW9ucyksZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcigibW91c2Vkb3duIixlLmxpc3RlbmVyLmJpbmQoZSksZS5saXN0ZW5lck9wdGlvbnMpLGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoInRvdWNoc3RhcnQiLGUubGlzdGVuZXIuYmluZChlKSxlLmxpc3RlbmVyT3B0aW9ucyl9fSx7a2V5OiJsaXN0ZW5lciIsdmFsdWU6ZnVuY3Rpb24oZSl7dmFyIHQ9ZS50YXJnZXQuY2xvc2VzdCgiYSIpLG49dGhpcy5fcHJlcGFyZVVybCh0KTtpZihudWxsIT09bilzd2l0Y2goZS50eXBlKXtjYXNlIm1vdXNlZG93biI6Y2FzZSJ0b3VjaHN0YXJ0Ijp0aGlzLl9hZGRQcmVmZXRjaExpbmsobik7YnJlYWs7Y2FzZSJtb3VzZW92ZXIiOnRoaXMuX2Vhcmx5UHJlZmV0Y2godCxuLCJtb3VzZW91dCIpfX19LHtrZXk6Il9lYXJseVByZWZldGNoIix2YWx1ZTpmdW5jdGlvbih0LGUsbil7dmFyIGk9dGhpcyxyPXNldFRpbWVvdXQoZnVuY3Rpb24oKXtpZihyPW51bGwsMD09PWkubnVtT25Ib3ZlcilzZXRUaW1lb3V0KGZ1bmN0aW9uKCl7cmV0dXJuIGkubnVtT25Ib3Zlcj0wfSwxZTMpO2Vsc2UgaWYoaS5udW1PbkhvdmVyPmkuY29uZmlnLnJhdGVUaHJvdHRsZSlyZXR1cm47aS5udW1PbkhvdmVyKyssaS5fYWRkUHJlZmV0Y2hMaW5rKGUpfSx0aGlzLmNvbmZpZy5vbkhvdmVyRGVsYXkpO3QuYWRkRXZlbnRMaXN0ZW5lcihuLGZ1bmN0aW9uIGUoKXt0LnJlbW92ZUV2ZW50TGlzdGVuZXIobixlLHtwYXNzaXZlOiEwfSksbnVsbCE9PXImJihjbGVhclRpbWVvdXQocikscj1udWxsKX0se3Bhc3NpdmU6ITB9KX19LHtrZXk6Il9hZGRQcmVmZXRjaExpbmsiLHZhbHVlOmZ1bmN0aW9uKGkpe3JldHVybiB0aGlzLnByZWZldGNoZWQuYWRkKGkuaHJlZiksbmV3IFByb21pc2UoZnVuY3Rpb24oZSx0KXt2YXIgbj1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCJsaW5rIik7bi5yZWw9InByZWZldGNoIixuLmhyZWY9aS5ocmVmLG4ub25sb2FkPWUsbi5vbmVycm9yPXQsZG9jdW1lbnQuaGVhZC5hcHBlbmRDaGlsZChuKX0pLmNhdGNoKGZ1bmN0aW9uKCl7fSl9fSx7a2V5OiJfcHJlcGFyZVVybCIsdmFsdWU6ZnVuY3Rpb24oZSl7aWYobnVsbD09PWV8fCJvYmplY3QiIT09KHZvaWQgMD09PWU/InVuZGVmaW5lZCI6cihlKSl8fCExIGluIGV8fC0xPT09WyJodHRwOiIsImh0dHBzOiJdLmluZGV4T2YoZS5wcm90b2NvbCkpcmV0dXJuIG51bGw7dmFyIHQ9ZS5ocmVmLnN1YnN0cmluZygwLHRoaXMuY29uZmlnLnNpdGVVcmwubGVuZ3RoKSxuPXRoaXMuX2dldFBhdGhuYW1lKGUuaHJlZix0KSxpPXtvcmlnaW5hbDplLmhyZWYscHJvdG9jb2w6ZS5wcm90b2NvbCxvcmlnaW46dCxwYXRobmFtZTpuLGhyZWY6dCtufTtyZXR1cm4gdGhpcy5faXNMaW5rT2soaSk/aTpudWxsfX0se2tleToiX2dldFBhdGhuYW1lIix2YWx1ZTpmdW5jdGlvbihlLHQpe3ZhciBuPXQ/ZS5zdWJzdHJpbmcodGhpcy5jb25maWcuc2l0ZVVybC5sZW5ndGgpOmU7cmV0dXJuIG4uc3RhcnRzV2l0aCgiLyIpfHwobj0iLyIrbiksdGhpcy5fc2hvdWxkQWRkVHJhaWxpbmdTbGFzaChuKT9uKyIvIjpufX0se2tleToiX3Nob3VsZEFkZFRyYWlsaW5nU2xhc2giLHZhbHVlOmZ1bmN0aW9uKGUpe3JldHVybiB0aGlzLmNvbmZpZy51c2VzVHJhaWxpbmdTbGFzaCYmIWUuZW5kc1dpdGgoIi8iKSYmIXRoaXMucmVnZXguZmlsZUV4dC50ZXN0KGUpfX0se2tleToiX2lzTGlua09rIix2YWx1ZTpmdW5jdGlvbihlKXtyZXR1cm4gbnVsbCE9PWUmJiJvYmplY3QiPT09KHZvaWQgMD09PWU/InVuZGVmaW5lZCI6cihlKSkmJighdGhpcy5wcmVmZXRjaGVkLmhhcyhlLmhyZWYpJiZlLm9yaWdpbj09PXRoaXMuY29uZmlnLnNpdGVVcmwmJi0xPT09ZS5ocmVmLmluZGV4T2YoIj8iKSYmLTE9PT1lLmhyZWYuaW5kZXhPZigiIyIpJiYhdGhpcy5yZWdleC5leGNsdWRlVXJpcy50ZXN0KGUuaHJlZikmJiF0aGlzLnJlZ2V4LmltYWdlcy50ZXN0KGUuaHJlZikpfX1dLFt7a2V5OiJydW4iLHZhbHVlOmZ1bmN0aW9uKCl7InVuZGVmaW5lZCIhPXR5cGVvZiBSb2NrZXRQcmVsb2FkTGlua3NDb25maWcmJm5ldyBuKG5ldyBSb2NrZXRCcm93c2VyQ29tcGF0aWJpbGl0eUNoZWNrZXIoe2NhcHR1cmU6ITAscGFzc2l2ZTohMH0pLFJvY2tldFByZWxvYWRMaW5rc0NvbmZpZykuaW5pdCgpfX1dKSxufSgpO3QucnVuKCk7Cn0oKSk7Cg=="
+      data-rocket-status="executed"
+    >
+      (function() {
+      "use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+      }());
+    </script>
+    <script
+      id="twenty-twenty-one-ie11-polyfills-js-after"
+      src="data:text/javascript;base64,CiggRWxlbWVudC5wcm90b3R5cGUubWF0Y2hlcyAmJiBFbGVtZW50LnByb3RvdHlwZS5jbG9zZXN0ICYmIHdpbmRvdy5Ob2RlTGlzdCAmJiBOb2RlTGlzdC5wcm90b3R5cGUuZm9yRWFjaCApIHx8IGRvY3VtZW50LndyaXRlKCAnPHNjcmlwdCBzcmM9Imh0dHBzOi8vbGVhcm5za2lsbHN0b2RheS5jb20vd3AtY29udGVudC90aGVtZXMvdHdlbnR5dHdlbnR5b25lL2Fzc2V0cy9qcy9wb2x5ZmlsbHMuanM/dmVyPTEuOCI+PC9zY3InICsgJ2lwdD4nICk7Cg=="
+      data-rocket-status="executed"
+    >
+      ( Element.prototype.matches && Element.prototype.closest && window.NodeList && NodeList.prototype.forEach ) || document.write( '<script src="https://learnskillstoday.com/wp-content/themes/twentytwentyone/assets/js/polyfills.js?ver=1.8"></scr' + 'ipt>' );
+    </script>
+    <script
+      id="twenty-twenty-one-responsive-embeds-script-js"
+      src="https://learnskillstoday.com/wp-content/themes/twentytwentyone/assets/js/responsive-embeds.js?ver=1.8"
+      data-rocket-status="executed"
+    ></script>
+    <script id="eael-general-js-extra">
+      var localize = {
+        ajaxurl: "https:\/\/learnskillstoday.com\/wp-admin\/admin-ajax.php",
+        nonce: "58f244a78b",
+        i18n: { added: "Added ", compare: "Compare", loading: "Loading..." },
+        eael_translate_text: {
+          required_text: "is a required field",
+          invalid_text: "Invalid",
+          billing_text: "Billing",
+          shipping_text: "Shipping",
+          fg_mfp_counter_text: "of",
+        },
+        page_permalink:
+          "https:\/\/learnskillstoday.com\/cartoon-hindi-stories-bundle-pack\/",
+        cart_redirectition: "",
+        cart_page_url: "",
+        el_breakpoints: {
+          mobile: {
+            label: "Mobile Portrait",
+            value: 767,
+            default_value: 767,
+            direction: "max",
+            is_enabled: true,
+          },
+          mobile_extra: {
+            label: "Mobile Landscape",
+            value: 880,
+            default_value: 880,
+            direction: "max",
+            is_enabled: false,
+          },
+          tablet: {
+            label: "Tablet Portrait",
+            value: 1024,
+            default_value: 1024,
+            direction: "max",
+            is_enabled: true,
+          },
+          tablet_extra: {
+            label: "Tablet Landscape",
+            value: 1200,
+            default_value: 1200,
+            direction: "max",
+            is_enabled: false,
+          },
+          laptop: {
+            label: "Laptop",
+            value: 1366,
+            default_value: 1366,
+            direction: "max",
+            is_enabled: false,
+          },
+          widescreen: {
+            label: "Widescreen",
+            value: 2400,
+            default_value: 2400,
+            direction: "min",
+            is_enabled: false,
+          },
+        },
+      };
+    </script>
+    <script
+      id="eael-general-js"
+      src="https://learnskillstoday.com/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/js/view/general.min.js?ver=5.9.10"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="eael-1236-js"
+      src="https://learnskillstoday.com/wp-content/uploads/essential-addons-elementor/eael-1236.js?ver=1705345656"
+      data-rocket-status="executed"
+    ></script>
+    <script id="disabled-source-and-content-protection-js-js-extra">
+      var jh_disabled_options_data = {
+        disabled_click: "1",
+        disabled_ct_u: "1",
+        disabled_f12: "1",
+        disabled_ctst_i: "1",
+        disabled_ctst_j: "1",
+        disabled_ctst_c: "1",
+        disabled_ct_s: "1",
+        disabled_dragging_img: "1",
+        disabled_notifi_status: "",
+        disabled_notifi_text: "You cannot copy content of this Page",
+      };
+    </script>
+    <script
+      id="disabled-source-and-content-protection-js-js"
+      src="https://learnskillstoday.com/wp-content/plugins/disabled-source-disabled-right-click-and-content-protection/includes/assets/js/protection.js?ver=1.0.0"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="pa-wrapper-link-js"
+      src="https://learnskillstoday.com/wp-content/plugins/premium-addons-for-elementor/assets/frontend/min-js/premium-wrapper-link.min.js?ver=4.10.22"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="font-awesome-4-shim-js"
+      src="https://learnskillstoday.com/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=5.9.10"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="elementor-pro-webpack-runtime-js"
+      src="https://learnskillstoday.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.15.1"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="elementor-webpack-runtime-js"
+      src="https://learnskillstoday.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.19.3"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="elementor-frontend-modules-js"
+      src="https://learnskillstoday.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.19.3"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="wp-polyfill-inert-js"
+      src="https://learnskillstoday.com/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="regenerator-runtime-js"
+      src="https://learnskillstoday.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.14.0"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="wp-polyfill-js"
+      src="https://learnskillstoday.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="wp-hooks-js"
+      src="https://learnskillstoday.com/wp-includes/js/dist/hooks.min.js?ver=c6aec9a8d4e5a5d543a1"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="wp-i18n-js"
+      src="https://learnskillstoday.com/wp-includes/js/dist/i18n.min.js?ver=7701b0c3857f914212ef"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="wp-i18n-js-after"
+      src="data:text/javascript;base64,CndwLmkxOG4uc2V0TG9jYWxlRGF0YSggeyAndGV4dCBkaXJlY3Rpb25cdTAwMDRsdHInOiBbICdsdHInIF0gfSApOwo="
+      data-rocket-status="executed"
+    >
+      wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+    </script>
+    <script
+      id="elementor-pro-frontend-js-before"
+      src="data:text/javascript;base64,CnZhciBFbGVtZW50b3JQcm9Gcm9udGVuZENvbmZpZyA9IHsiYWpheHVybCI6Imh0dHBzOlwvXC9sZWFybnNraWxsc3RvZGF5LmNvbVwvd3AtYWRtaW5cL2FkbWluLWFqYXgucGhwIiwibm9uY2UiOiI4ZWIxNjBiZGY1IiwidXJscyI6eyJhc3NldHMiOiJodHRwczpcL1wvbGVhcm5za2lsbHN0b2RheS5jb21cL3dwLWNvbnRlbnRcL3BsdWdpbnNcL2VsZW1lbnRvci1wcm9cL2Fzc2V0c1wvIiwicmVzdCI6Imh0dHBzOlwvXC9sZWFybnNraWxsc3RvZGF5LmNvbVwvd3AtanNvblwvIn0sInNoYXJlQnV0dG9uc05ldHdvcmtzIjp7ImZhY2Vib29rIjp7InRpdGxlIjoiRmFjZWJvb2siLCJoYXNfY291bnRlciI6dHJ1ZX0sInR3aXR0ZXIiOnsidGl0bGUiOiJUd2l0dGVyIn0sImxpbmtlZGluIjp7InRpdGxlIjoiTGlua2VkSW4iLCJoYXNfY291bnRlciI6dHJ1ZX0sInBpbnRlcmVzdCI6eyJ0aXRsZSI6IlBpbnRlcmVzdCIsImhhc19jb3VudGVyIjp0cnVlfSwicmVkZGl0Ijp7InRpdGxlIjoiUmVkZGl0IiwiaGFzX2NvdW50ZXIiOnRydWV9LCJ2ayI6eyJ0aXRsZSI6IlZLIiwiaGFzX2NvdW50ZXIiOnRydWV9LCJvZG5va2xhc3NuaWtpIjp7InRpdGxlIjoiT0siLCJoYXNfY291bnRlciI6dHJ1ZX0sInR1bWJsciI6eyJ0aXRsZSI6IlR1bWJsciJ9LCJkaWdnIjp7InRpdGxlIjoiRGlnZyJ9LCJza3lwZSI6eyJ0aXRsZSI6IlNreXBlIn0sInN0dW1ibGV1cG9uIjp7InRpdGxlIjoiU3R1bWJsZVVwb24iLCJoYXNfY291bnRlciI6dHJ1ZX0sIm1peCI6eyJ0aXRsZSI6Ik1peCJ9LCJ0ZWxlZ3JhbSI6eyJ0aXRsZSI6IlRlbGVncmFtIn0sInBvY2tldCI6eyJ0aXRsZSI6IlBvY2tldCIsImhhc19jb3VudGVyIjp0cnVlfSwieGluZyI6eyJ0aXRsZSI6IlhJTkciLCJoYXNfY291bnRlciI6dHJ1ZX0sIndoYXRzYXBwIjp7InRpdGxlIjoiV2hhdHNBcHAifSwiZW1haWwiOnsidGl0bGUiOiJFbWFpbCJ9LCJwcmludCI6eyJ0aXRsZSI6IlByaW50In19LCJmYWNlYm9va19zZGsiOnsibGFuZyI6ImVuX1VTIiwiYXBwX2lkIjoiIn0sImxvdHRpZSI6eyJkZWZhdWx0QW5pbWF0aW9uVXJsIjoiaHR0cHM6XC9cL2xlYXJuc2tpbGxzdG9kYXkuY29tXC93cC1jb250ZW50XC9wbHVnaW5zXC9lbGVtZW50b3ItcHJvXC9tb2R1bGVzXC9sb3R0aWVcL2Fzc2V0c1wvYW5pbWF0aW9uc1wvZGVmYXVsdC5qc29uIn19Owo="
+      data-rocket-status="executed"
+    >
+      var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/learnskillstoday.com\/wp-admin\/admin-ajax.php","nonce":"8eb160bdf5","urls":{"assets":"https:\/\/learnskillstoday.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/learnskillstoday.com\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/learnskillstoday.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+    </script>
+    <script
+      id="elementor-pro-frontend-js"
+      src="https://learnskillstoday.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.15.1"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="elementor-waypoints-js"
+      src="https://learnskillstoday.com/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="jquery-ui-core-js"
+      src="https://learnskillstoday.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="elementor-frontend-js-before"
+      src="data:text/javascript;base64,CnZhciBlbGVtZW50b3JGcm9udGVuZENvbmZpZyA9IHsiZW52aXJvbm1lbnRNb2RlIjp7ImVkaXQiOmZhbHNlLCJ3cFByZXZpZXciOmZhbHNlLCJpc1NjcmlwdERlYnVnIjpmYWxzZX0sImkxOG4iOnsic2hhcmVPbkZhY2Vib29rIjoiU2hhcmUgb24gRmFjZWJvb2siLCJzaGFyZU9uVHdpdHRlciI6IlNoYXJlIG9uIFR3aXR0ZXIiLCJwaW5JdCI6IlBpbiBpdCIsImRvd25sb2FkIjoiRG93bmxvYWQiLCJkb3dubG9hZEltYWdlIjoiRG93bmxvYWQgaW1hZ2UiLCJmdWxsc2NyZWVuIjoiRnVsbHNjcmVlbiIsInpvb20iOiJab29tIiwic2hhcmUiOiJTaGFyZSIsInBsYXlWaWRlbyI6IlBsYXkgVmlkZW8iLCJwcmV2aW91cyI6IlByZXZpb3VzIiwibmV4dCI6Ik5leHQiLCJjbG9zZSI6IkNsb3NlIiwiYTExeUNhcm91c2VsV3JhcHBlckFyaWFMYWJlbCI6IkNhcm91c2VsIHwgSG9yaXpvbnRhbCBzY3JvbGxpbmc6IEFycm93IExlZnQgJiBSaWdodCIsImExMXlDYXJvdXNlbFByZXZTbGlkZU1lc3NhZ2UiOiJQcmV2aW91cyBzbGlkZSIsImExMXlDYXJvdXNlbE5leHRTbGlkZU1lc3NhZ2UiOiJOZXh0IHNsaWRlIiwiYTExeUNhcm91c2VsRmlyc3RTbGlkZU1lc3NhZ2UiOiJUaGlzIGlzIHRoZSBmaXJzdCBzbGlkZSIsImExMXlDYXJvdXNlbExhc3RTbGlkZU1lc3NhZ2UiOiJUaGlzIGlzIHRoZSBsYXN0IHNsaWRlIiwiYTExeUNhcm91c2VsUGFnaW5hdGlvbkJ1bGxldE1lc3NhZ2UiOiJHbyB0byBzbGlkZSJ9LCJpc19ydGwiOmZhbHNlLCJicmVha3BvaW50cyI6eyJ4cyI6MCwic20iOjQ4MCwibWQiOjc2OCwibGciOjEwMjUsInhsIjoxNDQwLCJ4eGwiOjE2MDB9LCJyZXNwb25zaXZlIjp7ImJyZWFrcG9pbnRzIjp7Im1vYmlsZSI6eyJsYWJlbCI6Ik1vYmlsZSBQb3J0cmFpdCIsInZhbHVlIjo3NjcsImRlZmF1bHRfdmFsdWUiOjc2NywiZGlyZWN0aW9uIjoibWF4IiwiaXNfZW5hYmxlZCI6dHJ1ZX0sIm1vYmlsZV9leHRyYSI6eyJsYWJlbCI6Ik1vYmlsZSBMYW5kc2NhcGUiLCJ2YWx1ZSI6ODgwLCJkZWZhdWx0X3ZhbHVlIjo4ODAsImRpcmVjdGlvbiI6Im1heCIsImlzX2VuYWJsZWQiOmZhbHNlfSwidGFibGV0Ijp7ImxhYmVsIjoiVGFibGV0IFBvcnRyYWl0IiwidmFsdWUiOjEwMjQsImRlZmF1bHRfdmFsdWUiOjEwMjQsImRpcmVjdGlvbiI6Im1heCIsImlzX2VuYWJsZWQiOnRydWV9LCJ0YWJsZXRfZXh0cmEiOnsibGFiZWwiOiJUYWJsZXQgTGFuZHNjYXBlIiwidmFsdWUiOjEyMDAsImRlZmF1bHRfdmFsdWUiOjEyMDAsImRpcmVjdGlvbiI6Im1heCIsImlzX2VuYWJsZWQiOmZhbHNlfSwibGFwdG9wIjp7ImxhYmVsIjoiTGFwdG9wIiwidmFsdWUiOjEzNjYsImRlZmF1bHRfdmFsdWUiOjEzNjYsImRpcmVjdGlvbiI6Im1heCIsImlzX2VuYWJsZWQiOmZhbHNlfSwid2lkZXNjcmVlbiI6eyJsYWJlbCI6IldpZGVzY3JlZW4iLCJ2YWx1ZSI6MjQwMCwiZGVmYXVsdF92YWx1ZSI6MjQwMCwiZGlyZWN0aW9uIjoibWluIiwiaXNfZW5hYmxlZCI6ZmFsc2V9fX0sInZlcnNpb24iOiIzLjE5LjMiLCJpc19zdGF0aWMiOmZhbHNlLCJleHBlcmltZW50YWxGZWF0dXJlcyI6eyJlX29wdGltaXplZF9hc3NldHNfbG9hZGluZyI6dHJ1ZSwiZV9vcHRpbWl6ZWRfY3NzX2xvYWRpbmciOnRydWUsImFkZGl0aW9uYWxfY3VzdG9tX2JyZWFrcG9pbnRzIjp0cnVlLCJ0aGVtZV9idWlsZGVyX3YyIjp0cnVlLCJibG9ja19lZGl0b3JfYXNzZXRzX29wdGltaXplIjp0cnVlLCJhaS1sYXlvdXQiOnRydWUsImxhbmRpbmctcGFnZXMiOnRydWUsImVfaW1hZ2VfbG9hZGluZ19vcHRpbWl6YXRpb24iOnRydWUsImVfZ2xvYmFsX3N0eWxlZ3VpZGUiOnRydWUsInBhZ2UtdHJhbnNpdGlvbnMiOnRydWUsIm5vdGVzIjp0cnVlLCJsb29wIjp0cnVlLCJmb3JtLXN1Ym1pc3Npb25zIjp0cnVlLCJlX3Njcm9sbF9zbmFwIjp0cnVlfSwidXJscyI6eyJhc3NldHMiOiJodHRwczpcL1wvbGVhcm5za2lsbHN0b2RheS5jb21cL3dwLWNvbnRlbnRcL3BsdWdpbnNcL2VsZW1lbnRvclwvYXNzZXRzXC8ifSwic3dpcGVyQ2xhc3MiOiJzd2lwZXItY29udGFpbmVyIiwic2V0dGluZ3MiOnsicGFnZSI6W10sImVkaXRvclByZWZlcmVuY2VzIjpbXX0sImtpdCI6eyJhY3RpdmVfYnJlYWtwb2ludHMiOlsidmlld3BvcnRfbW9iaWxlIiwidmlld3BvcnRfdGFibGV0Il0sImdsb2JhbF9pbWFnZV9saWdodGJveCI6InllcyIsImxpZ2h0Ym94X2VuYWJsZV9jb3VudGVyIjoieWVzIiwibGlnaHRib3hfZW5hYmxlX2Z1bGxzY3JlZW4iOiJ5ZXMiLCJsaWdodGJveF9lbmFibGVfem9vbSI6InllcyIsImxpZ2h0Ym94X2VuYWJsZV9zaGFyZSI6InllcyIsImxpZ2h0Ym94X3RpdGxlX3NyYyI6InRpdGxlIiwibGlnaHRib3hfZGVzY3JpcHRpb25fc3JjIjoiZGVzY3JpcHRpb24ifSwicG9zdCI6eyJpZCI6MTIzNiwidGl0bGUiOiJDYXJ0b29uJTIwSGluZGklMjBTdG9yaWVzJTIwQnVuZGxlJTIwUGFjayUyMC0lMjBMZWFybiUyMFNraWxscyUyMFRvZGF5IiwiZXhjZXJwdCI6IiIsImZlYXR1cmVkSW1hZ2UiOmZhbHNlfX07Cg=="
+      data-rocket-status="executed"
+    >
+      var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselWrapperAriaLabel":"Carousel | Horizontal scrolling: Arrow Left & Right","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.19.3","is_static":false,"experimentalFeatures":{"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"additional_custom_breakpoints":true,"theme_builder_v2":true,"block_editor_assets_optimize":true,"ai-layout":true,"landing-pages":true,"e_image_loading_optimization":true,"e_global_styleguide":true,"page-transitions":true,"notes":true,"loop":true,"form-submissions":true,"e_scroll_snap":true},"urls":{"assets":"https:\/\/learnskillstoday.com\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper-container","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":1236,"title":"Cartoon%20Hindi%20Stories%20Bundle%20Pack%20-%20Learn%20Skills%20Today","excerpt":"","featuredImage":false}};
+    </script>
+    <script
+      id="elementor-frontend-js"
+      src="https://learnskillstoday.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.19.3"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      id="pro-elements-handlers-js"
+      src="https://learnskillstoday.com/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.15.1"
+      data-rocket-status="executed"
+    ></script>
+    <script
+      src="data:text/javascript;base64,CgkJLyh0cmlkZW50fG1zaWUpL2kudGVzdChuYXZpZ2F0b3IudXNlckFnZW50KSYmZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQmJndpbmRvdy5hZGRFdmVudExpc3RlbmVyJiZ3aW5kb3cuYWRkRXZlbnRMaXN0ZW5lcigiaGFzaGNoYW5nZSIsKGZ1bmN0aW9uKCl7dmFyIHQsZT1sb2NhdGlvbi5oYXNoLnN1YnN0cmluZygxKTsvXltBLXowLTlfLV0rJC8udGVzdChlKSYmKHQ9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoZSkpJiYoL14oPzphfHNlbGVjdHxpbnB1dHxidXR0b258dGV4dGFyZWEpJC9pLnRlc3QodC50YWdOYW1lKXx8KHQudGFiSW5kZXg9LTEpLHQuZm9jdXMoKSl9KSwhMSk7CgkJ"
+      data-rocket-status="executed"
+    >
+      /(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",(function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())}),!1);
+    </script>
+    <script>
+      class RocketElementorAnimation {
+        constructor() {
+          (this.deviceMode = document.createElement("span")),
+            (this.deviceMode.id = "elementor-device-mode-wpr"),
+            this.deviceMode.setAttribute("class", "elementor-screen-only"),
+            document.body.appendChild(this.deviceMode);
+        }
+        _detectAnimations() {
+          let t = getComputedStyle(this.deviceMode, ":after").content.replace(
+            /"/g,
+            ""
+          );
+          (this.animationSettingKeys = this._listAnimationSettingsKeys(t)),
+            document
+              .querySelectorAll(".elementor-invisible[data-settings]")
+              .forEach((t) => {
+                const e = t.getBoundingClientRect();
+                if (e.bottom >= 0 && e.top <= window.innerHeight)
+                  try {
+                    this._animateElement(t);
+                  } catch (t) {}
+              });
+        }
+        _animateElement(t) {
+          const e = JSON.parse(t.dataset.settings),
+            i = e._animation_delay || e.animation_delay || 0,
+            n = e[this.animationSettingKeys.find((t) => e[t])];
+          if ("none" === n)
+            return void t.classList.remove("elementor-invisible");
+          t.classList.remove(n),
+            this.currentAnimation && t.classList.remove(this.currentAnimation),
+            (this.currentAnimation = n);
+          let s = setTimeout(() => {
+            t.classList.remove("elementor-invisible"),
+              t.classList.add("animated", n),
+              this._removeAnimationSettings(t, e);
+          }, i);
+          window.addEventListener("rocket-startLoading", function () {
+            clearTimeout(s);
+          });
+        }
+        _listAnimationSettingsKeys(t = "mobile") {
+          const e = [""];
+          switch (t) {
+            case "mobile":
+              e.unshift("_mobile");
+            case "tablet":
+              e.unshift("_tablet");
+            case "desktop":
+              e.unshift("_desktop");
+          }
+          const i = [];
+          return (
+            ["animation", "_animation"].forEach((t) => {
+              e.forEach((e) => {
+                i.push(t + e);
+              });
+            }),
+            i
+          );
+        }
+        _removeAnimationSettings(t, e) {
+          this._listAnimationSettingsKeys().forEach((t) => delete e[t]),
+            (t.dataset.settings = JSON.stringify(e));
+        }
+        static run() {
+          const t = new RocketElementorAnimation();
+          requestAnimationFrame(t._detectAnimations.bind(t));
+        }
+      }
+      document.addEventListener(
+        "DOMContentLoaded",
+        RocketElementorAnimation.run
+      );
+    </script>
+
+    <span id="elementor-device-mode-wpr" class="elementor-screen-only"></span
+    ><span id="elementor-device-mode" class="elementor-screen-only"></span
+    ><svg style="display: none" class="e-font-icon-svg-symbols"></svg>
+  </body>
+</html>
